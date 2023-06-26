@@ -235,11 +235,14 @@ class Celula {
   vivir() {
     console.log(`Mi nombre ${this.nombre} y soy un/a ${this.organismo}`);
   }
+
 }
 
 const vida1 = new Celula("Epitelial", "Celula");
 console.log(vida1);
 vida1.vivir();
+
+
 
 //CREANDO UN PRIMATE A PARTIR DE CÉLULA//
 
@@ -270,7 +273,7 @@ class Humano extends Primate {
   }
 }
 
-const HumanoCarlitos = new Humano ("Carlitos", "Humano", "Pelar bananas", "vender comida callejera")
+const HumanoCarlitos = new Humano ("Carlitos", "Humano", "Pelar bananas", "vender comida en la calle")
 console.log(HumanoCarlitos);
 HumanoCarlitos.realizandoAccion1()
 
@@ -284,9 +287,36 @@ class Robot extends Humano {
   realizandoAccion2() {
     console.log(`Soy un ${this.organismo}, me cambiaron el nombre a ${this.nombre}, y debo ${this.accion0}, ${this.accion1} y ${this.accion2} :(`)
   }
+  static info() {
+    console.log(`Este es un método estático, no tengo propiedades: ${this.nombre}`)
+  }
+
+  //GET -> Obtiene el valor de la propiedad.
+  get getEdad() {
+    return this.edad;
+  }
+
+  //SET ->  Permiten realizar acciones adicionales.
+  set setEdad(edad){
+    this.edad = edad;
+  }
 }
 
 const RobotMarkus = new Robot("Markus", "Robot", "obedecer", "ayudar", "acompañar");
 console.log(RobotMarkus);
 RobotMarkus.realizandoAccion2();
+console.log(RobotMarkus.getEdad)
+RobotMarkus.setEdad = 54;
+console.log(RobotMarkus.getEdad)
+RobotMarkus.setEdad = 60;
+console.log(RobotMarkus.getEdad)
+
+
+//CLASE 25 - METODOS ESTATICOS, GETTERS Y SETTERS//
+//REALIZANDO EJERCCIO EN 230
+
+//ESTÁTICO -> Se puede ejecutar sin la necesidad de tener una instancia.
+Robot.info()
+
+//SETTERS Y GETTERS -> Métodos que nos permiten establecer y obtener ls valores de atributos de nuestras clases.
 
