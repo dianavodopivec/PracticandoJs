@@ -85,9 +85,6 @@ console.log(9 === 9) && ("9" === "9");
 
 
 //CLASE 22 - PROTOTIPOS//
-
-
-
 /*
 POO (Programación Orientada a Objetos) => 
 Conceptos: 
@@ -227,7 +224,7 @@ cocho.saludar(); */
 //CLASE 24 - CLASES Y HERENCIA DE CLASES//
 //Las clases NO reciben parámetros, para eso deben tener el método especial constructor (recibe las propiedades),
 
-class Celula {
+/*class Celula {
   constructor(nombre, organismo) {
     this.nombre = nombre;
     this.organismo = organismo;
@@ -309,14 +306,103 @@ console.log(RobotMarkus.getEdad)
 RobotMarkus.setEdad = 54;
 console.log(RobotMarkus.getEdad)
 RobotMarkus.setEdad = 60;
-console.log(RobotMarkus.getEdad)
-
+console.log(RobotMarkus.getEdad)*/
 
 //CLASE 25 - METODOS ESTATICOS, GETTERS Y SETTERS//
 //REALIZANDO EJERCCIO EN 230
+//SETTERS Y GETTERS -> Métodos que nos permiten establecer y obtener ls valores de atributos de nuestras clases.
 
 //ESTÁTICO -> Se puede ejecutar sin la necesidad de tener una instancia.
-Robot.info()
+/*Robot.info()*/
 
-//SETTERS Y GETTERS -> Métodos que nos permiten establecer y obtener ls valores de atributos de nuestras clases.
+//CLASE 26 - OBJETO CONSOLE//
+
+//LOG -> Se utiliza para registros generales del programa.
+console.log("Un registro de lo que ha pasado en nuestra aplicación");
+//ERROR -> Se utiliza para indicar ERRORES.
+console.error("Esto es un error");
+//WARN -> Se utiliza para indicar ADVERTENCIAS.
+console.warn("Esto es una advertencia");
+//INFO -> Se utiliza para indicar mensajes INFORMATIVOS.
+console.info("Esto es un mensaje informativo");
+//CLEAR -> Se utiliza para limpiar todo lo que está en la consola.
+console.clear();
+
+let nombre = "Diana";
+apellido = "Vodopivec";
+edad = 22;
+
+console.log(nombre);
+console.log(apellido);
+console.log(edad);
+console.log(nombre, apellido, edad);
+console.log(`Hola mi nombre es ${nombre} ${apellido} y tengo ${edad} años`)
+
+//COMODÍN %S (d -> representa números) -> Significa que lo que va a recibir es una cadena de texto.
+console.log(`Hola mi nombre es %s %s y tengo %d años`, nombre, apellido, edad)
+//WINDOW -> Se utiliza para representar la ventana del navegador y proporciona acceso a varias funcionalidades y propiedades relacionadas con la ventana y el entorno del navegador.
+console.log(window);
+//DOCUMENT -> Se utiliza para mostrar una representación del documento HTML a través de Javascript.
+console.log(document);
+//DIR -> Se utiliza para mostrar una representación en formato de árbol de un objeto en la consola.
+console.dir(window);
+console.dir(document);
+console.clear();
+//GROUP -> Se utiliza para agrupar mensajes en la consola, lo que permite organizar y estructurar la información de una manera más clara.
+console.group("Materias de la facultad");
+console.log("Enfermería en Médica 2");
+console.log("Enfermería en Salud Pública 2");
+console.log("Enfermería en Salud mental");
+//GROUPCOLLAPSED -> Se utiliza para crear grupos de mensajes en la consola con la diferencia de que estos grupos están inicialmente colapsados en la consola.
+console.groupCollapsed();
+//GROUPEND -> Se utiliza para indicar que el grupo ha terminado.
+console.groupEnd();
+console.clear();
+//TABLE -> Se utiliza para mostrar datos en forma de tabla en la consola.
+console.log(console);
+console.table(Object.entries(console).sort());
+
+const numeros = [1,2,3,4,5],
+vocales = ["a", "e", "i", "o", "u"];
+
+console.table(numeros);
+console.table(vocales);
+
+const perro = {
+  nombre: "Toto",
+  raza: "Labrador",
+  color: "Arena",
+  edad: 14,
+}
+console.table(perro);
+console.clear();
+
+//TIME -> Se utiliza para mostrar el tiempo transcurrido en la consola.
+console.time("Cuánto tiempo tarda mi código")
+
+const arreglo = Array(10);
+
+for (let i = 0; i < arreglo.length; i ++) {
+  arreglo[i] = i;
+}
+//TIMEEND -> Se utiliza para detener el temporizador iniciado.
+console.timeEnd("Cuánto tiempo tarda mi código");
+console.log(arreglo);
+console.clear();
+
+//COUNT -> Se utiliza para contar el número de veces que se ha llamado a una etiqueta específica.
+
+for (let i = 0; i <= 100; i ++) {
+  console.count("Código for")
+  console.log(i);
+}
+console.clear();
+
+//ASSERT -> Se utiliza para realizar una afirmación y mostrar un mensaje de error en la consola si la afirmación es falsa. 
+
+let x = 1,
+y = 2,
+pruebaXY = "Se espera que X siempre sea menor que Y";
+
+console.assert(x < y, {x, y, pruebaXY});
 
