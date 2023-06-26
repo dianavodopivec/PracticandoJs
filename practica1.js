@@ -175,11 +175,9 @@ console.log (cocho);
 vex.sonar(); 
 cocho.saludar();*/
 
-
-
 //CLASE 23 - HERENCIA PROTOTÍPICA//
 //
-
+/*
 function Animal1 (nombre, genero) {
   this.nombre = nombre;
   this.genero = genero;
@@ -224,5 +222,71 @@ vex.sonar();
 vex.ladrar();
 
 cocho.sonar();
-cocho.saludar();
+cocho.saludar(); */
+
+//CLASE 24 - CLASES Y HERENCIA DE CLASES//
+//Las clases NO reciben parámetros, para eso deben tener el método especial constructor (recibe las propiedades),
+
+class Celula {
+  constructor(nombre, organismo) {
+    this.nombre = nombre;
+    this.organismo = organismo;
+  }
+  vivir() {
+    console.log(`Mi nombre ${this.nombre} y soy un/a ${this.organismo}`);
+  }
+}
+
+const vida1 = new Celula("Epitelial", "Celula");
+console.log(vida1);
+vida1.vivir();
+
+//CREANDO UN PRIMATE A PARTIR DE CÉLULA//
+
+class Primate extends Celula {
+  constructor(nombre, organismo, accion0) {
+    super(nombre, organismo);
+    this.accion0 = accion0;
+  }
+  realizandoAccion0() {
+    console.log(`Evolucioné, ahora puedo ${this.accion0}`);
+  }
+}
+
+const primateMonito = new Primate("Monito", "Primate", "pelar bananas");
+console.log(primateMonito);
+primateMonito.vivir();
+primateMonito.realizandoAccion0();
+
+//CREANDO UN HUMANO A PARTIR DE PRIMATE//
+
+class Humano extends Primate {
+  constructor(nombre, organismo, accion0, accion1) {
+    super(nombre, organismo, accion0);
+    this.accion1 = accion1;
+  }
+  realizandoAccion1() {
+    console.log(`Mi nuevo nombre es ${this.nombre}, soy un ${this.organismo} y me dedico a ${this.accion1}`);
+  }
+}
+
+const HumanoCarlitos = new Humano ("Carlitos", "Humano", "Pelar bananas", "vender comida callejera")
+console.log(HumanoCarlitos);
+HumanoCarlitos.realizandoAccion1()
+
+//CREANDO UN CYBORG A PARTIR DE HUMANO//
+
+class Robot extends Humano {
+  constructor(nombre, organismo, accion0, accion1, accion2) {
+    super(nombre, organismo, accion0, accion1);
+    this.accion2 = accion2;
+  }
+  realizandoAccion2() {
+    console.log(`Soy un ${this.organismo}, me cambiaron el nombre a ${this.nombre}, y debo ${this.accion0}, ${this.accion1} y ${this.accion2} :(`)
+  }
+}
+
+const RobotMarkus = new Robot("Markus", "Robot", "obedecer", "ayudar", "acompañar");
+console.log(RobotMarkus);
+RobotMarkus.realizandoAccion2();
 
