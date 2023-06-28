@@ -84,7 +84,10 @@ console.log(9 === 9) && ("9" === "9");
 
 
 
-                                          //CLASE 22 - PROTOTIPOS//
+//CLASE 22 - PROTOTIPOS//
+
+
+
 /*
 POO (Programación Orientada a Objetos) => 
 Conceptos: 
@@ -146,7 +149,7 @@ cocho.saludar(); */
 
 //SEPARAMOS LOS MÉTODOS DE LA FUNCIÓN PARA ASIGNAR LOS PROTOTIPOS//
 
-function Animal1 (nombre, genero, tipo) {
+/*function Animal1 (nombre, genero, tipo) {
   //ATRIBUTOS
   this.nombre = nombre;
   this.genero = genero;
@@ -170,5 +173,56 @@ console.log (vex);
 console.log (cocho);
 
 vex.sonar(); 
-cocho.saludar(); 
+cocho.saludar();*/
+
+
+
+//CLASE 23 - HERENCIA PROTOTÍPICA//
+//
+
+function Animal1 (nombre, genero) {
+  this.nombre = nombre;
+  this.genero = genero;
+}
+
+Animal1.prototype.sonar = function () {
+  console.log("Hago soniditos de animalitos");
+};
+Animal1.prototype.saludar = function () {
+  console.log(`Hola, me llamo ${this.nombre} y soy muy sucio`);
+};
+
+//HERENCIA PROTOTIPICA
+function Perro(nombre, genero, tamaño) {
+//MÉTODO "SUPER" -> Manda a llamar al constructor de la clase padre.
+  this.super = Animal1
+  this.super(nombre, genero)
+  this.tamaño = tamaño
+}
+
+//Perro está heredando de Animal
+Perro.prototype = new Animal1 ();
+Perro.prototype.constructor = Perro;
+
+//Sobreescritura de métodos del Prototipo padre en el hijo
+Perro.prototype.sonar = function () {
+  console.log("Soy un perro y mi sonido es un ladrido")
+}
+
+Perro.prototype.ladrar = function () {
+  console.log("Hago Guau Guau")
+}
+
+const vex = new Perro("Vex", "Hembra", "Mediano"),
+  cocho = new Animal1("Cocho", "Macho" );
+
+console.log(vex);
+console.log(cocho);
+
+vex.saludar();
+vex.sonar();
+vex.ladrar();
+
+cocho.sonar();
+cocho.saludar();
 
