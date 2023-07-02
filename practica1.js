@@ -308,13 +308,19 @@ RobotMarkus.setEdad = 60;
 console.log(RobotMarkus.getEdad)*/
 
 //CLASE 25 - METODOS ESTATICOS, GETTERS Y SETTERS//
+
+//FUNCIÓN -> Permiten acceder y manipular los valores de propiedades de manera controlada.
 //REALIZANDO EJERCCIO EN 230
 //SETTERS Y GETTERS -> Métodos que nos permiten establecer y obtener ls valores de atributos de nuestras clases.
 
 //ESTÁTICO -> Se puede ejecutar sin la necesidad de tener una instancia.
 /*Robot.info()*/
 
+
+
 //CLASE 26 - OBJETO CONSOLE//
+
+//FUNCIÓN ->  Proporciona métodos para imprimir mensajes y datos en la consola del navegador.
 
 //LOG -> Se utiliza para registros generales del programa.
 console.log("Un registro de lo que ha pasado en nuestra aplicación");
@@ -406,8 +412,11 @@ pruebaXY = "Se espera que X siempre sea menor que Y";
 console.assert(x < y, {x, y, pruebaXY});
 console.clear();
 
+
+
 //CLASE 27 - OBJETO DATE//
 
+//FUNCIÓN -> Se utiliza para trabajar con fechas y horas.
 //CONSTRUCTOR "DATE" 
 
 console.log(Date());
@@ -452,7 +461,11 @@ let cumpleañosDiana = new Date(2000,10,17);
 console.log(cumpleañosDiana);
 console.clear()
 
+
+
 //CLASE 28 - OBJETO MATH//
+
+//FUNCIÓN -> Nos proporciona propiedades y métodos para realizar operaciones matemáticas.
 //Es un objeto ESTÁTICO, esto quiere decir que cada vez que vamos a utilizarlo, hay que invocar directamente al objeto (prototipo)
 
 console.log(Math);
@@ -478,7 +491,11 @@ console.log(Math.random());
 console.log(Math.round(Math.random()* 1000));
 console.clear()
 
+
+
 //CLASE 29 - OPERADORES DE CORTOCIRCUITO//
+
+//FUNCIÓN -> Se utilizan para evaluar expresiones lógicas de manera eficiente.
 //Estos operadores funcionan poniendo dos condiciones, ya sean utilizando el operador lógico OR o AND//
 
 //CORTOCIRCUITO OR (||) -> Se utiliza cuando el valor de la izquierda en la expresión siempre pueda validar a true, es el valor que se cargará por defecto.
@@ -506,6 +523,7 @@ console.log(0 || "DERECHA");//EN CASO DE FALSE, SIEMPRE SE APLICA AL DERECHO
 
 //CORTOCIRCUITO AND (&&) -> Se utiliza cuando el valor de la izquierda en la expresión siempre pueda validar a false, es el valor que se cargará por defecto.
 
+//Se pueden aplicar en ...
 console.log("IZQUIERDA" && "IZQUIERDA");//STRING
 console.log("IZQUIERDA" && 20);//NÚMEROS
 console.log("IZQUIERDA" && true);//BOOLEANO
@@ -520,3 +538,39 @@ console.log("IZQUIERDA" && 0);
 console.clear()
 
 //CLASE 30 - ALERT, CONFIRM Y PROMPT//
+
+//ALERT -> Se utiliza para mostrar una ventana emergente en el navegador con un mensaje de texto. (No almacena nada)
+
+//CONFIRM -> Se utiliza para mostrar una ventana emergente con un mensaje y opciones de confirmación. (Almacena true/false, según lo que el usuario escriba)
+
+//PROMPT -> Se utiliza para mostrar una ventana emergente con un mensaje y un campo de entrada de texto. (Almacena lo que el usuario escribió, en caso de que no escriba nada se almacena como "null")
+
+console.clear()
+
+//CLASE 31 - EXPRESIONES REGULARES//
+//FUNCIÓN -> Secuencia de carácteres que forma un patrón de búsqueda, principalmente utilizada para la búsqueda de patrones de cadenas de carácteres.
+
+//UTILIZANADO FUNCIÓN CONSTRUCTURA O DE FORMA DIRECTA
+
+let saludar = "Hola, le tengo miedo a las tormentas eléctricas así que me esconderé en mi refugio"
+
+let expReg = new RegExp("Hola","ig");
+let expReg2 = /Hola/ig;
+let expReg3 = /Hola(1,2, 3)/ig;
+
+//DEVUELVE UN BOOLEANO
+//console.log(expReg.test(saludar));
+//console.log(expReg.exec(saludar));
+
+//DEVUELVE UN ARREGLO
+console.log(expReg2.test(saludar));
+console.log(expReg2.exec(saludar)); 
+
+console.log(expReg3.test(saludar));
+console.log(expReg3.exec(saludar)); 
+
+//CLASE 32 - EXPRESIONES REGULARES//
+
+
+
+
