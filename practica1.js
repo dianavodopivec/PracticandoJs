@@ -569,6 +569,7 @@ console.log(expReg2.exec(saludar));
 console.log(expReg3.test(saludar));
 console.log(expReg3.exec(saludar)); 
 
+//CLASE 32 - EXPRESIONES REGULARES//
 
 
 
