@@ -537,6 +537,8 @@ console.log("IZQUIERDA" && -2);
 console.log("IZQUIERDA" && 0);
 console.clear()
 
+
+
 //CLASE 30 - ALERT, CONFIRM Y PROMPT//
 
 //ALERT -> Se utiliza para mostrar una ventana emergente en el navegador con un mensaje de texto. (No almacena nada)
@@ -546,6 +548,8 @@ console.clear()
 //PROMPT -> Se utiliza para mostrar una ventana emergente con un mensaje y un campo de entrada de texto. (Almacena lo que el usuario escribió, en caso de que no escriba nada se almacena como "null")
 
 console.clear()
+
+
 
 //CLASE 31 - EXPRESIONES REGULARES//
 //FUNCIÓN -> Secuencia de carácteres que forma un patrón de búsqueda, principalmente utilizada para la búsqueda de patrones de cadenas de carácteres.
@@ -569,8 +573,44 @@ console.log(expReg2.exec(saludar));
 console.log(expReg3.test(saludar));
 console.log(expReg3.exec(saludar)); 
 
-//CLASE 32 - EXPRESIONES REGULARES//
 
 
+//CLASE 32 - FUNCIONES ANÓNIMAS AUTOEJECUTABLES//
+//FUNCIÓN -> No se almacena en un archivo de programa, pero se asocia con una variable.
+//ES IMPORTANTE USAR ; PARA SEPARAR O EL CÓDIGO FIGURA COMO ERROR.
+
+(function (){
+  console.log("Primera vez haciendo esto")
+})();
+
+(function (d, w, c){
+  console.log("Segunda vez haciendo esto")
+  console.log(d);
+  console.log(c);
+})(document, window, console);
+
+console.clear()
 
 
+//CLASE 33 - MÓDULOS (IMPORT/EXPORT)//
+//FUNCIÓN -> Nos permiten la organización y reutilización de código en diferentes archivos.
+//ARCHIVO.HTML -> <SCRIPT SRC="x.js" type = "module"></script>
+//EN CASO DE QUE EL NAVEGADOR NO SEA COMPATIBLE -> ARCHIVO.HTML -> <SCRIPT SRC="x.js" nomodule></script>
+
+
+//EXPORT -> Se utiliza para exportar funciones, objetos, clases o variables de un archivo JavaScript para que estén disponibles para otros archivos (funciones, clases o variables).
+// EXPORT function sum ...
+
+function sum(a, b) {
+  return a + b;
+}
+
+console.log(sum(1,2))
+
+//EXPORT DEFAULT -> Permite exportar un valor predeterminado desde un archivo, permitiendo que el archivo se exporte sin llaves en el archivo que lo utiliza y solo se permite una exportación predeterminada por archivo.
+
+//IMPORT -> Se utiliza para acceder a las exportaciones realizadas desde otro archivo, se pueden realizar varias exportaciones e incluso renombrar en el proceso.
+
+//EN EL ARCHIVO AL QUE QUIERO EXPORTAR PONEMOS:
+//IMPORT {sum} from "./nombredearchivo.js" 
+//console.log(sum)
