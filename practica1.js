@@ -451,3 +451,28 @@ console.log(Date.now());
 
 let cumpleañosDiana = new Date(2000,10,17);
 console.log(cumpleañosDiana);
+
+//CLASE 28 - OBJETO MATH//
+//Es un objeto ESTÁTICO, esto quiere decir que cada vez que vamos a utilizarlo, hay que invocar directamente al objeto (prototipo)
+
+console.log(Math);
+console.log(Math.PI);
+//MÉTODO ABS -> Se utiliza para obtener el valor absoluto de un número (cantidad tal del número sin considerar que es + o -)
+console.log(Math.abs(9.8));
+console.log(Math.abs(-9.8));
+//MÉTODO CEIL -> Se utiliza para obtener el valor de un número pero redondeado, esto quiere decir que obtendremos el número entero mayor.
+console.log(Math.ceil(10.8));
+//MÉTODO FLOOR -> Lo contrario al método ceil.
+console.log(Math.floor(10.8));
+//MÉTODO ROUND -> Se utiliza para obtener el valor de un número pero redondea siempre al más cercano.
+console.log(Math.round(7.2));
+//MÉTODO SQRT -> Se utiliza para obtener la raíz cuadrada de un número.
+console.log(Math.sqrt(4));
+//MÉTODO POW -> Se utiliza para obtener potencias.
+console.log(Math.pow(2,5));
+//MÉTODO SIGN -> Se utiliza para indicar si un número es positivo, negativo o 0.
+console.log(Math.sign(-7.5));
+//MÉTODO RANDOM -> Se utiliza para obtener un valor aleatorio comprendido entre 0 y 1.
+console.log(Math.random());
+//OTRO EJEMPLO:
+console.log(Math.round(Math.random()* 1000));
