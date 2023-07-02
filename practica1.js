@@ -614,3 +614,5 @@ console.log(sum(1,2))
 //EN EL ARCHIVO AL QUE QUIERO EXPORTAR PONEMOS:
 //IMPORT {sum} from "./nombredearchivo.js" 
 //console.log(sum)
+
+console.clear()
