@@ -142,11 +142,11 @@ console.log (vex);
 console.log (cocho);
 
 vex.saludar(); 
-cocho.saludar(); */
+cocho.saludar(); 
 
 //SEPARAMOS LOS MÉTODOS DE LA FUNCIÓN PARA ASIGNAR LOS PROTOTIPOS//
 
-/*function Animal1 (nombre, genero, tipo) {
+function Animal1 (nombre, genero, tipo) {
   //ATRIBUTOS
   this.nombre = nombre;
   this.genero = genero;
@@ -170,11 +170,10 @@ console.log (vex);
 console.log (cocho);
 
 vex.sonar(); 
-cocho.saludar();*/
+cocho.saludar();
 
 //CLASE 23 - HERENCIA PROTOTÍPICA//
-//
-/*
+
 function Animal1 (nombre, genero) {
   this.nombre = nombre;
   this.genero = genero;
@@ -219,12 +218,12 @@ vex.sonar();
 vex.ladrar();
 
 cocho.sonar();
-cocho.saludar(); */
+cocho.saludar(); 
 
 //CLASE 24 - CLASES Y HERENCIA DE CLASES//
 //Las clases NO reciben parámetros, para eso deben tener el método especial constructor (recibe las propiedades),
 
-/*class Celula {
+class Celula {
   constructor(nombre, organismo) {
     this.nombre = nombre;
     this.organismo = organismo;
@@ -451,6 +450,7 @@ console.log(Date.now());
 
 let cumpleañosDiana = new Date(2000,10,17);
 console.log(cumpleañosDiana);
+console.clear()
 
 //CLASE 28 - OBJETO MATH//
 //Es un objeto ESTÁTICO, esto quiere decir que cada vez que vamos a utilizarlo, hay que invocar directamente al objeto (prototipo)
@@ -476,3 +476,47 @@ console.log(Math.sign(-7.5));
 console.log(Math.random());
 //OTRO EJEMPLO:
 console.log(Math.round(Math.random()* 1000));
+console.clear()
+
+//CLASE 29 - OPERADORES DE CORTOCIRCUITO//
+//Estos operadores funcionan poniendo dos condiciones, ya sean utilizando el operador lógico OR o AND//
+
+//CORTOCIRCUITO OR (||) -> Se utiliza cuando el valor de la izquierda en la expresión siempre pueda validar a true, es el valor que se cargará por defecto.
+
+function persona (nombre) {
+  nombre = nombre || "Elizabeth";
+  console.log(`Hola, mi nombre es ${nombre}`)
+}
+
+persona("Diana");
+persona();
+
+//Se pueden aplicar en ...
+console.log("IZQUIERDA" || "DERECHA");//STRING
+console.log(20 || "DERECHA");//NÚMEROS
+console.log(true || "DERECHA");//BOOLEANO
+console.log([] || "DERECHA");//ARREGLO
+console.log({} || "DERECHA");//OBJETO VACÍO
+console.log(false || "DERECHA");//EN CASO DE FALSE, SIEMPRE SE APLICA AL DERECHO
+console.log(null || "DERECHA");//EN CASO DE FALSE, SIEMPRE SE APLICA AL DERECHO
+console.log(undefined || "DERECHA");//EN CASO DE FALSE, SIEMPRE SE APLICA AL DERECHO
+console.log("" || "DERECHA");//EN CASO DE FALSE, SIEMPRE SE APLICA AL DERECHO
+console.log(-2 || "DERECHA");//NÚMEROS
+console.log(0 || "DERECHA");//EN CASO DE FALSE, SIEMPRE SE APLICA AL DERECHO
+
+//CORTOCIRCUITO AND (&&) -> Se utiliza cuando el valor de la izquierda en la expresión siempre pueda validar a false, es el valor que se cargará por defecto.
+
+console.log("IZQUIERDA" && "IZQUIERDA");//STRING
+console.log("IZQUIERDA" && 20);//NÚMEROS
+console.log("IZQUIERDA" && true);//BOOLEANO
+console.log("IZQUIERDA" && []);//ARREGLO
+console.log("IZQUIERDA" && {});//OBJETO VACÍO
+console.log("IZQUIERDA" && false);
+console.log("IZQUIERDA" && null);
+console.log("IZQUIERDA" && undefined);
+console.log("IZQUIERDA" && "");
+console.log("IZQUIERDA" && -2);
+console.log("IZQUIERDA" && 0);
+console.clear()
+
+//CLASE 30 - ALERT, CONFIRM Y PROMPT//
