@@ -13,6 +13,15 @@
 contadorDePalabras("Galletita")
 contadorDePalabras(null)
 
+const contadorDePalabras = (texto) => {
+    typeof texto === "string" 
+    ? console.log(`La palabra tiene ${texto.length} caracteres.`)
+    : console.warn("La palabra que ingresaste NO es un STRING.")
+  }
+
+contadorDePalabras("Galletita")
+contadorDePalabras(null)
+
 
 // (2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
 
@@ -26,6 +35,18 @@ function reductorDePalabras(palabra, numero1, numero2) {
   } else { 
     console.warn("Tu palabra NO es un STRING o tu valor no es un NÚMERO.");
   }
+}
+reductorDePalabras("Enojado Oso Atacando", 7, 11);
+reductorDePalabras("Gordo Quejoso Judio", 0, 5);
+reductorDePalabras("Gorda Asquerosa", 0, 6);
+reductorDePalabras(null)
+
+function reductorDePalabras(palabra, numero1, numero2) {
+    typeof palabra === "string" &&
+    typeof numero1 === "number" &&
+    typeof numero2 === "number"
+    ? console.log(palabra.slice(numero1, numero2))
+    :console.warn("Tu palabra NO es un STRING o tu valor no es un NÚMERO.");
 }
 reductorDePalabras("Enojado Oso Atacando", 7, 11);
 reductorDePalabras("Gordo Quejoso Judio", 0, 5);
@@ -58,6 +79,19 @@ function repetirPalabras(palabrotas) {
 repetirPalabras("HOLA, SOY UNA PALABROTA PORQUE ESTOY EN MAYÚSCULA")
 repetirPalabras(1)
 
+function repetirPalabras(palabrotas, numero) {
+    if(typeof palabrotas === "string" && typeof numero === "number") {
+        for (let i = 0; i <= numero; i++) 
+        console.log(`Tu numero se repitió ${i} veces.`)
+        }
+    else {
+        console.warn("INCORRECTO, recuerda que para utilizar este método debes ingresar una cadena de texto.")
+    }
+}
+
+repetirPalabras("HOLA, SOY UNA PALABROTA PORQUE ESTOY EN MAYÚSCULA ", 20)
+repetirPalabras(1)
+
 
 //EJERCICIOS JAVASCRIPT "LÓGICA DE PROGRAMACIÓN" CLASE 35//
 
@@ -73,10 +107,38 @@ function invertirPalabras(invertir) {
   }
   
   invertirPalabras("Funciona pero LAS PALABRAS NO SALEN INVERTIDAS");
-  
 
+  function invertirPalabras(invertir) {
+    if (typeof invertir === "string") {
+      const palabras = invertir.split(""); //TRANSFORMO STRING A ARRAY, PORQUE NO PUEDO USAR REVERSE EN UN STRING.
+      const palabrasInvertidas = palabras.reverse();//INVIERTE EL ARRAY.
+      const textoInvertido = palabrasInvertidas.join("");//LO VUELVE A TRANSFORMAR EN STRING.
+      console.log(textoInvertido)
+    }
+  }
+  
+  invertirPalabras("Buen día");
+  
 // (6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
 
 // (7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
+
+const detectorDePalindromo = (palabra) => {
+    if (typeof palabra !== "string") {
+        console.warn("por favor, ingrese una palabrita")
+    } else {
+        const palabraInicial = palabra.toLowerCase()
+        const palabraComparar = palabra.split("").reverse().join("").toLowerCase()
+        if (palabraInicial === palabraComparar) {
+            console.info(`Tu palabra ${palabra} es un palíndromo`)
+        }
+        else {
+            console.info(`Tu palabra ${palabra} NO es un palíndromo`)
+        }
+    }
+}
+
+detectorDePalindromo("oda")
+detectorDePalindromo("Ada")
 
 // (8)  Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.
