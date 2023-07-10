@@ -2,7 +2,7 @@
 
 // (1) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
 
-  function contadorDePalabras(texto) {
+  function contadorDeLetras(texto) {
     if (typeof texto === "string") {
         console.log(`La palabra ${texto.length} SI es un STRING`)
     } else {
@@ -10,17 +10,18 @@
     }
   }
 
-contadorDePalabras("Galletita")
-contadorDePalabras(null)
+contadorDeLetras("Galletita")
+contadorDeLetras(null)
 
-const contadorDePalabras = (texto) => {
+/*
+const contadorDeLetras = (texto) => {
     typeof texto === "string" 
     ? console.log(`La palabra tiene ${texto.length} caracteres.`)
     : console.warn("La palabra que ingresaste NO es un STRING.")
   }
 
-contadorDePalabras("Galletita")
-contadorDePalabras(null)
+contadorDeLetras("Galletita")
+contadorDeLetras(null)*/
 
 
 // (2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
@@ -37,8 +38,8 @@ function reductorDePalabras(palabra, numero1, numero2) {
   }
 }
 reductorDePalabras("Enojado Oso Atacando", 7, 11);
-reductorDePalabras("Gordo Quejoso Judio", 0, 5);
-reductorDePalabras("Gorda Asquerosa", 0, 6);
+reductorDePalabras("Pajarito azul cantando", 0, 5);
+reductorDePalabras("Delfín saltando", 0, 6);
 reductorDePalabras(null)
 
 function reductorDePalabras(palabra, numero1, numero2) {
@@ -49,8 +50,8 @@ function reductorDePalabras(palabra, numero1, numero2) {
     :console.warn("Tu palabra NO es un STRING o tu valor no es un NÚMERO.");
 }
 reductorDePalabras("Enojado Oso Atacando", 7, 11);
-reductorDePalabras("Gordo Quejoso Judio", 0, 5);
-reductorDePalabras("Gorda Asquerosa", 0, 6);
+reductorDePalabras("Pajarito azul cantando", 0, 5);
+reductorDePalabras("Delfín saltando", 0, 6);
 reductorDePalabras(null)
 
 // (3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].
@@ -137,13 +138,13 @@ const contarPalabras = (texto, palabra) => {
 }
 
 contarPalabras("hola amigos adiós amigos amigos", "amigos")
-contadorDePalabras(null)
+contarPalabras(null)
 
 // (7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
 
 const detectorDePalindromo = (palabra) => {
   if (typeof palabra !== "string") {
-      console.warn("por favor, ingrese una palabrita")
+      console.warn("Por favor, ingrese una palabrita")
   } else {
       const palabraInicial = palabra.toLowerCase()
       const palabraComparar = palabra.split("").reverse().join("").toLowerCase()
@@ -175,9 +176,19 @@ eliminarCaracteres("xyz1, xyz2, xyz3, xyz4 y xyz5", /xyz/ig, "")
 eliminarCaracteres(1)
 eliminarCaracteres("cyberponkoko1, cyberponkoko2, cyberponkoko3, cyberponkoko4 y cyberponkoko5", /ponkoko/ig, "punk")
 
+console.clear()
+
+//EJERCICIOS JAVASCRIPT "LÓGICA DE PROGRAMACIÓN" CLASE 36//
+
+
 // (9) Programa una función que obtenga un numero aleatorio entre 501 y 600.
 
+const numeroAleatorio = () => {
+  const numeroRandom = Math.round(Math.random() * 100) + 500;
+  console.log(`Tu número aleatorio es ${numeroRandom}`);
+} 
 
+numeroAleatorio();
 
 // (10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true.
 
