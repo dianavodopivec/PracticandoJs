@@ -107,7 +107,7 @@ function invertirPalabras(invertir) {
     }
   }
   
-  invertirPalabras("Funciona pero LAS PALABRAS NO SALEN INVERTIDAS");
+  invertirPalabras("Funciona, ESTOY AL REVÉS");
 
   function invertirPalabras(invertir) {
     if (typeof invertir === "string") {
@@ -173,10 +173,8 @@ const eliminarCaracteres = (caracteres, expresionRegular, reemplazo) => {
 }
 
 eliminarCaracteres("xyz1, xyz2, xyz3, xyz4 y xyz5", /xyz/ig, "")
-eliminarCaracteres(1)
 eliminarCaracteres("cyberponkoko1, cyberponkoko2, cyberponkoko3, cyberponkoko4 y cyberponkoko5", /ponkoko/ig, "punk")
-
-console.clear()
+eliminarCaracteres(1)
 
 //EJERCICIOS JAVASCRIPT "LÓGICA DE PROGRAMACIÓN" CLASE 36//
 
@@ -192,6 +190,58 @@ numeroAleatorio();
 
 // (10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true.
 
-
+const numeroCapicua = (numero) => {
+    if (typeof numero !== "number") {
+      console.warn("Por favor, ingresá un numero");
+    } else {
+      const numeroNuevo = Math.round(numero.toString().split("").reverse().join(""));
+      if (numero !== numeroNuevo) {
+        console.log(`Tu numero ingresado "${numero}" NO es capicúa`)
+      } else {
+        console.log(`Tu numero ingresado "${numero}" SI es capicúa`)
+      }
+    }
+  }
+  
+numeroCapicua(222)
+numeroCapicua(1224)
 
 // (11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.
+
+// (12) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F)
+
+const conversor = (numeros, unidad) => {
+  if (typeof numeros !== "number" && typeof unidad !== "string") {
+    console.warn("Ingresá los grados y su unidad, por favor");
+  } else if (unidad.toLowerCase() !== "c" && unidad.toLowerCase() !== "f") {
+    console.error("Las unidades solo pueden ser °C o °F");
+  } else {
+    if (unidad.toLowerCase() === "c") {
+      let resultado1 = Math.round((numeros * 9) / 5 + 32);
+      console.log(`Tus °${numeros} C son °${resultado1} F.`);
+    } else if (unidad.toLowerCase() === "f") {
+      let resultado2 = Math.round(((numeros - 32) * 5) / 9);
+      console.log(`Tus °${numeros} F son °${resultado2} C.`);
+    }
+  }
+};
+
+conversor(20, "c");
+conversor(50, "f");
+
+// (13) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.
+
+const descuentito = (descuento, numero) => {
+  if (typeof descuento !== "number" && typeof numero !== "number") {
+    console.warn("Ingresá el precio y su respectivo descuento");
+  } else if (Math.sign(descuento) === -1 || Math.sign(numero) === -1) {
+    console.error("Solo se aceptan numeros naturales");
+  } else {
+    let descontar = (numero * descuento) / 100;
+    let resultadoDescuento = Math.round(numero - descontar);
+    console.log(`Tu descuento es del ${Math.round(descuento)}% y el precio final es de: $${resultadoDescuento}`);
+  }
+};
+
+descuentito(23, 1000.543);
+descuentito(40, 1000);
