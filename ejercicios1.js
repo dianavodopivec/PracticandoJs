@@ -178,7 +178,6 @@ eliminarCaracteres(1)
 
 //EJERCICIOS JAVASCRIPT "LÓGICA DE PROGRAMACIÓN" CLASE 36//
 
-
 // (9) Programa una función que obtenga un numero aleatorio entre 501 y 600.
 
 const numeroAleatorio = () => {
@@ -208,7 +207,20 @@ numeroCapicua(1224)
 
 // (11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.
 
-// (12) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F)
+//FALTA!!
+
+//EJERCICIOS JAVASCRIPT "LÓGICA DE PROGRAMACIÓN" CLASE 37//
+
+// (12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true).
+
+//FALTA!!
+
+
+// (13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.)
+
+//FALTA!!
+
+// (14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F)
 
 const conversor = (numeros, unidad) => {
   if (typeof numeros !== "number" && typeof unidad !== "string") {
@@ -229,7 +241,13 @@ const conversor = (numeros, unidad) => {
 conversor(20, "c");
 conversor(50, "f");
 
-// (13) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.
+//EJERCICIOS JAVASCRIPT "LÓGICA DE PROGRAMACIÓN" CLASE 38//
+
+// (15) Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10.).
+
+//FALTA!!
+
+// (16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.
 
 const descuentito = (descuento, numero) => {
   if (typeof descuento !== "number" && typeof numero !== "number") {
@@ -245,3 +263,79 @@ const descuentito = (descuento, numero) => {
 
 descuentito(23, 1000.543);
 descuentito(40, 1000);
+
+// (17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
+
+//FALTA!!
+
+//EJERCICIOS JAVASCRIPT "LÓGICA DE PROGRAMACIÓN" CLASE 39//
+
+// (18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
+
+const contadorVocalesConsonantes = (texto) => {
+  if (typeof texto === "string") {
+    const consonantes = "bcdfghjklmnpqrstvwxyz"
+    const vocales = ["a", "e", "i", "o", "u"]
+    let contadorConsonantes = 0;
+    let contadorVocales = 0
+    for (let i = 0; i < texto.length; i++) {
+      if (vocales.includes(texto[i].toLowerCase())) {
+        contadorVocales++
+      } 
+      else if (consonantes.includes(texto[i].toLowerCase())) {
+        contadorConsonantes++
+      }
+    }
+    console.log(
+      `El siguiente texto: "${texto}" tiene ${contadorConsonantes} consonantes y ${contadorVocales} vocales`
+    )
+  } else {
+    console.warn("Por favor, ingresa una cadena de texto")
+  }
+}
+
+contadorVocalesConsonantes("Hola, soy diana")
+contadorVocalesConsonantes(1)
+
+// (19) rograma una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+
+const validarNombre = (nombre = undefined) => {
+  const letrasTest = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ]+\s[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ]+$/
+  if (nombre === undefined) {
+    console.warn("Por favor, ingresá un nombre")
+    return
+  } 
+  if (letrasTest.test(nombre) === false) {
+    console.error("Por favor, ingresá un nombre válido")
+    return
+  } console.log(`El nombre que ingresaste "${nombre}" es válido`)
+}
+
+validarNombre("Diana Vodopivec")
+validarNombre(1)
+
+// (20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
+
+const validarEmail = (email = undefined) => {
+  const emailTest = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+  if(email === undefined) {
+    console.warn("Por favor, ingresá una dirección de email")
+    return 
+  } 
+  if (emailTest.test(email) === false) {
+    console.error("Por favor, ingresá un email válido. Por ejemplo: direccionemail@gmail.com")
+    return
+  } 
+  console.log(`Tu email "${email}" es válido.`)
+}
+
+validarEmail("dianavodopivec16@gmail.com")
+validarEmail(1)
+
+//EJERCICIOS JAVASCRIPT "LÓGICA DE PROGRAMACIÓN" CLASE 40//
+
+// (21) Programa una función que dado un array numérico devuelve otro array con los números elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25].
+
+
+// (22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].
+
