@@ -336,6 +336,67 @@ validarEmail(1)
 
 // (21) Programa una función que dado un array numérico devuelve otro array con los números elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25].
 
+const arrayNumeros = [2, 5, 9, 12, 15];
+
+const numerosElevados = (array = "", potencia) => {
+  if (array === "") {
+    console.warn("Por favor, ingrese un ARRAY")
+  } else if (typeof array !== "object" || typeof potencia !== "number") {
+    console.warn("Se espera un array y un número")
+  } else {
+    const elevados = []
+    array.map((x) => {
+      elevados.push(Math.pow(x, potencia))
+    })
+    return elevados
+  }
+}
+
+const arrayElevados = numerosElevados(arrayNumeros, 2)
+console.log(arrayElevados)
 
 // (22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].
 
+const arrayAltoBajo = [1, 4, 5, 99, -60]
+
+const numeroAltoBajo = (array) => {
+  if (!(array instanceof Array)) {
+    return console.warn("Por favor, ingrese un ARRAY")
+  } else { 
+    const numeroBajo = Math.min(...array)
+    const numeroAlto = Math.max(...array)
+    return [numeroAlto,numeroBajo]
+  }
+ }
+
+numeroAltoBajo("oda")
+console.log(numeroAltoBajo(arrayAltoBajo))
+
+// (23) Programa una función que dado un array de números devuelva un objeto con 2 arreglos en el primero almacena los números pares y en el segundo los impares, pe. miFuncion([1,2,3,4,5,6,7,8,9,0]) devolverá {pares: [2,4,6,8,0], impares: [1,3,5,7,9]}.
+
+const arrayParesImpares = [1, 2, 3, 4, 5, 6, 7, 8]
+
+const arrayParImpar = (array) => {
+  if (!(array instanceof Array)) {
+    return console.warn("Por favor, ingrese un ARRAY DE NÚMEROS")
+  } 
+
+}
+
+arrayParImpar("Hola")
+
+// (24) Programa una función que dado un arreglo de números devuelva un objeto con dos arreglos, el primero tendrá los numeros ordenados en forma ascendente y el segundo de forma descendiente, pe. miFuncion([7, 5,7,8,6]) devolverá { asc: [5,6,7,7,8], desc: [8,7,7,6,5].
+
+const arrayAscDesc = [2, 6, 9, 3, 1, 0, 5, 8, 4, 7]
+
+const arregloAscDesc = (array) => {
+  if(!(array instanceof Array)) {
+    console.warn("Únicamente se aceptan ARRAYS, ingrese uno")
+  } else {
+    const ascendente = array.sort((a, b) => b - a)
+    const descendente = array.sort((a, b) => b - a)
+    return {ascendente, descendente}
+  }
+}
+
+console.log(arregloAscDesc(arrayAscDesc))
