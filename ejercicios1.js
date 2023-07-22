@@ -462,3 +462,13 @@ obtenerPromedio(arrayPromedio)
 //     de cada película.
 
 // * Géneros Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary ,Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western.
+
+class peliculas {constructor(
+  id = "", 
+  titulo = "Interestelar", 
+  director = "Christopher Nolan", 
+  añoDeEstreno = 2014, 
+  pais = "Canadá", 
+  generos = ["Ciencia ficción", "Drama", "Misterio"],
+  calificacion = 7.9,
+  )}
