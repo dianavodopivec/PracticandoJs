@@ -400,3 +400,65 @@ const arregloAscDesc = (array) => {
 }
 
 console.log(arregloAscDesc(arrayAscDesc))
+
+//EJERCICIOS JAVASCRIPT "LÓGICA DE PROGRAMACIÓN" CLASE 41//
+
+// (25) Programa una función que dado un arreglo de elementos, elimine los duplicados, pe. miFuncion(["x", 10, "x", 2, "10", 10, true, true]) devolverá ["x", 10, 2, "10", true].
+
+const arrayDuplicado = ["x", 10, "x", 2, "10", 10, true, true]
+
+const eliminarDuplicados = (array) => {
+    if(!(array instanceof Array)) {
+        console.error("Únicamente se acepta un ARRAY, ingrese uno")
+        return
+    } 
+    const arraySinDuplicados = new Set([...array])
+    return arraySinDuplicados
+}
+
+console.log(eliminarDuplicados(arrayDuplicado))
+
+// (26) Programa una función que dado un arreglo de números obtenga el promedio, pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5.
+
+const arrayPromedio = [9,8,7,6,5,4,3,2,1,0,8.3,45,8.8]
+
+const obtenerPromedio = (array) => {
+    if(!(array instanceof Array)) {
+        console.error("Por favor, ingresá un array de números")
+        return
+    } 
+    if (array.some((x) => typeof x !== "number")) {
+        console.error("Tu ARRAY contiene elementos que NO son números")
+        return
+    } 
+    const numerosAcumulados = array.reduce((acumulador, x) => {
+       return acumulador + x
+    }, 0) 
+    const promedio = (numerosAcumulados / array.length).toFixed(1)
+    console.log(promedio)
+}
+
+obtenerPromedio(arrayPromedio)
+
+// 27) Programa una clase llamada Pelicula.
+
+// La clase recibirá un objeto al momento de instanciarse con los siguentes datos: id de la película en IMDB, titulo, director, año de estreno, país o países de origen, géneros y calificación en IMBD.
+//   - Todos los datos del objeto son obligatorios.
+//   - Valida que el id IMDB tenga 9 caracteres, los primeros 2 sean letras y los
+//      7 restantes números.
+//   - Valida que el título no rebase los 100 caracteres.
+//   - Valida que el director no rebase los 50 caracteres
+//   - Valida que el año de estreno sea un número entero de 4 dígitos.
+//   - Valida que el país o paises sea introducidos en forma de arreglo.
+//   - Valida que los géneros sean introducidos en forma de arreglo.
+//   - Valida que los géneros introducidos esten dentro de los géneros
+//      aceptados.
+//   - Crea un método estático que devuelva los géneros aceptados. 
+//   - Valida que la calificación sea un número entre 0 y 10 pudiendo ser
+//     decimal de una posición.
+//   - Crea un método que devuelva toda la ficha técnica de la película. 
+//   - Apartir de un arreglo con la información de 3 películas genera 3
+//     instancias de la clase de forma automatizada e imprime la ficha técnica🤓
+//     de cada película.
+
+// * Géneros Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary ,Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western.
