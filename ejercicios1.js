@@ -462,13 +462,204 @@ obtenerPromedio(arrayPromedio)
 //     de cada película.
 
 // * Géneros Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary ,Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western.
+class Peliculas {
+  constructor(
+    id = undefined,
+    titulo = undefined,
+    director = undefined,
+    añoDeEstreno = undefined,
+    pais = undefined,
+    generos = undefined,
+    calificacion = undefined
+  ) {
+    const idTest = /^[A-Za-z]{2}\d{7}$/;
+    const calificacionTest = /^[0-9](\.[0-9])?$/;
+    const añoTest = /^\d{4}$/;
+    const generosAceptados = [
+      "Acción",
+      "Adulto",
+      "Aventura",
+      "Animación",
+      "Biografía",
+      "Comedia",
+      "Crimen",
+      "Documental",
+      "Drama",
+      "Familia",
+      "Fantasía",
+      "Cine negro",
+      "Programa de juegos",
+      "Historia",
+      "Horror",
+      "Musical",
+      "Música",
+      "Misterio",
+      "Noticias",
+      "Reality-TV",
+      "Romance",
+      "Ciencia ficción",
+      "Corto",
+      "Deporte",
+      "Talk-Show",
+      "Thriller",
+      "Bélico",
+      "Western",
+    ];
 
-class peliculas {constructor(
-  id = "", 
-  titulo = "Interestelar", 
-  director = "Christopher Nolan", 
-  añoDeEstreno = 2014, 
-  pais = "Canadá", 
-  generos = ["Ciencia ficción", "Drama", "Misterio"],
-  calificacion = 7.9,
-  )}
+    if (
+      id === undefined ||
+      titulo === undefined ||
+      director === undefined ||
+      añoDeEstreno === undefined ||
+      pais === undefined ||
+      generos === undefined ||
+      calificacion === undefined
+    ) {
+      console.error("Es obligatorio ingresar TODOS los parámetros");
+      return;
+    }
+
+    if (idTest.test(id) === false) {
+      console.error(`El ID "${id}" NO es válido`);
+      return;
+    }
+    if (titulo.length > 100 || titulo.length < 1) {
+      console.error(`El título "${titulo}" NO es válido`);
+      return;
+    }
+    if (director.length > 50 || titulo.length < 1) {
+      console.error(`El nombre del director "${director}" NO es válido`);
+      return;
+    }
+    if (calificacionTest.test(calificacion) === false) {
+      console.error(`La calificación "${calificacion}" NO es válida`);
+      return;
+    }
+    if (añoTest.test(añoDeEstreno) === false) {
+      console.error(`El año de estreno "${añoDeEstreno}" NO es válido`);
+      return;
+    }
+    if (!(pais instanceof Array)) {
+      console.error(
+        `Los paises "${pais}" tienen que ser ingresados en forma de ARRAY.`
+      );
+      return;
+    }
+    if (!(generos instanceof Array)) {
+      console.error(
+        `Los generos "${generos}" tienen que ser ingresados en forma de ARRAY`
+      );
+      return;
+    }
+
+    let aceptado 
+    generos.filter((x) => {
+      if(!(generosAceptados.includes(x))){
+        return aceptado = false
+      }
+    });
+
+    if(aceptado === false){
+      console.error("Generos no aceptados")
+      return
+    }
+
+    (this.id = id),
+      (this.titulo = titulo),
+      (this.director = director),
+      (this.añoDeEstreno = añoDeEstreno),
+      (this.pais = pais),
+      (this.generos = generos),
+      (this.calificacion = calificacion);
+  }
+ static generosAceptados() {
+    console.log("Acción",
+    "Adulto",
+    "Aventura",
+    "Animación",
+    "Biografía",
+    "Comedia",
+    "Crimen",
+    "Documental",
+    "Drama",
+    "Familia",
+    "Fantasía",
+    "Cine negro",
+    "Programa de juegos",
+    "Historia",
+    "Horror",
+    "Musical",
+    "Música",
+    "Misterio",
+    "Noticias",
+    "Reality-TV",
+    "Romance",
+    "Ciencia ficción",
+    "Corto",
+    "Deporte",
+    "Talk-Show",
+    "Thriller",
+    "Bélico",
+    "Western",);
+  }
+  infoPelicula(){
+    console.log(
+      this.id, this.titulo, this.director, this.añoDeEstreno, this.pais, this.generos, this.calificacion
+    )
+  }
+}
+
+const peliculita = new Peliculas(
+  "CB0329124",
+  "popeitor200",
+  "popo johnes",
+  2022,
+  ["popoland"],
+  ["Horror", "Drama"],
+  9
+);
+console.log(peliculita);
+
+peliculita.infoPelicula()
+Peliculas.generosAceptados()
+
+const lasPeliculas = [{
+  id: "IR0482069",
+  titulo: "Interestelar",
+  director: "Christopher Nolan",
+  añoDeEstreno: 2014, 
+  pais: ["Estados Unidos", "Canadá", "Reino Unido"],
+  generos: ["Ciencia ficción", "Drama", "Aventura", "Misterio"],
+  calificacion: 8.8,
+},{
+  id: "BR2077049",
+  titulo: "Blade Runner 2049",
+  director: "Denis Villeneuve",
+  añoDeEstreno: 2017,
+  pais: ["Estados Unidos"],
+  generos: ["Ciencia ficción","Misterio","Thriller","Acción","Fantasía"],
+  calificacion: 8.2,
+},{
+  id: "HP2739270",
+  titulo: "Harry Potter y la piedra filosofal",
+  director: "Chris Columbus",
+  añoDeEstreno: 2001,
+  pais: ["Reino Unido", "Inglaterra", "Escocia"],
+  generos: ["Fantasía", "Aventura", "Ciencia ficción"],
+  calificacion: 9.2,
+}]
+
+lasPeliculas.forEach((x) => {
+    const infoPeliculas = new Peliculas(
+      x.id,
+      x.titulo,
+      x.director,
+      x.añoDeEstreno,
+      x.pais,
+      x.generos,
+      x.calificacion
+    )
+    infoPeliculas.infoPelicula()
+  })
+  
+  
