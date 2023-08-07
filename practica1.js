@@ -616,3 +616,86 @@ console.log(sum(1,2))
 //console.log(sum)
 
 console.clear()
+
+
+//----------------------- Clase 44 - Temporizadores (setTimeout & setInterval) ----------------------- //
+
+//Ejecutar función UNA sola vez.
+setTimeout(() => { //Recibe una función que ejecutará y un tiempo expresado en milisegundos  
+  /*console.log("Ejecutando un setTimeOut")*/}, 3000) //Tiempo en milisegundos
+
+//Ejecutar función indefinidamente en cada cierto intervalo de tiempo.
+setInterval(() => { //Recibe una función que ejecutará y un intervalo de tiempo.    
+  /*console.log("Ejecutando un setInterval")*/}, 1000)
+
+//Ejecutar función indefinidamente en cada cierto intervalo de tiempo con DATE.
+let temporizador = setInterval(() => {
+  console.log(new Date().toLocaleTimeString())}, 1000)
+clearInterval(temporizador) // Cancelar el setInterval (No olvidar convertirlo en una variable)
+let temporizador2 = setTimeout (() => {
+  console.log(new Date().toLocaleTimeString())}, 1000)
+clearTimeout(temporizador2) // Cancelar el setTimeOut (No olvidar convertirlo en una variable)
+
+//------------------------------ Clase 45 - Asincronía y el Event Loop ------------------------------//
+
+//Procesamiento "Single thread" () y "Multi thread" () -> 
+
+//-------------------------------------- Clase 46 - Callbacks --------------------------------------//
+
+//Callbacks --> Función que se ejecuta después de que otra lo haga y es un mecanismo que controla la sincronía
+
+function cuadradoCallback (valor, callback) {
+  setTimeout(() => {callback(valor, valor*valor) //Callback que se resolvería.    
+}, 0 | Math.random() * 1000) //Para recibir centesimas de segundo.
+}
+cuadradoCallback(0, (valor, resultado) => { //Recordar: SIEMPRE recibe una función (En este caso anónima)    
+  //console.log("Inicia callback")    
+  //console.log(`Callback: ${valor}, ${resultado}`) 
+  cuadradoCallback(1, (valor, resultado) => {
+    //console.log(`Callback: ${valor}, ${resultado}`)   
+  })
+  cuadradoCallback(2, (valor, resultado) => { 
+      //console.log(`Callback: ${valor}, ${resultado}`)     
+    })
+    cuadradoCallback(3, (valor, resultado) => {
+        //console.log(`Callback: ${valor}, ${resultado}`)       
+      })
+      cuadradoCallback(4, (valor, resultado) => {
+          //console.log(`Callback: ${valor}, ${resultado}`)       
+         })
+         cuadradoCallback(5, (valor, resultado) => {
+            //console.log(`Callback: ${valor}, ${resultado}`)           
+          })})
+
+//-------------------------------------- Clase 47 - Promesas --------------------------------------// 
+//Promesas --> Se utilizan cuando existe una concatenación de varios procesos asíncronos.
+
+function cuadradoPromesa(valor) { 
+  if(typeof valor !== "number") return Promise.reject(`Error, el valor "${valor}" ingresado no es un numero`)
+ return new Promise((resuelve,rechaza) => { //Dos partes resuelve y rechaza la promesa, son métodos estáticos (no se necesita crear instancia para utilizarlos)      
+  setTimeout(() => {
+    resuelve({ //Se considera un "return positivo" de la promesa en caso de que se cumpla.            
+      valor, //Se puede simplificar eliminando el valor:            
+      resultado: valor * valor })}, 0 | (Math.random() * 1000))})
+    }
+
+//Método then() --> Se ejecutará una vez que se cumpla la función inicial y se puede utilizar las veces que se necesite.//Método catch() --> Captura el error resultante del reject.
+
+cuadradoPromesa(0)
+.then((obj) => { //Recibe la parte positiva de la promesa    
+  //console.log(`Promesa: ${obj.valor}, ${obj.resultado}`)   
+  return cuadradoPromesa(1)}).then((obj) => {
+    //console.log(`Promesa: ${obj.valor}, ${obj.resultado}`)    
+    return cuadradoPromesa(2)}).then((obj) => {
+      //console.log(`Promesa: ${obj.valor}, ${obj.resultado}`)    
+      return cuadradoPromesa(3)}).then((obj) => {
+        //console.log(`Promesa: ${obj.valor}, ${obj.resultado}`)
+        return cuadradoPromesa(4)}).then((obj) => {
+          //console.log(`Promesa: ${obj.valor}, ${obj.resultado}`)
+          return cuadradoPromesa(5)})
+
+.catch(error => console.error(error))
+
+//-------------------------------------- Clase 48 - Async/Await --------------------------------------//
+
+//Función asíncrona --> 
