@@ -679,7 +679,8 @@ function cuadradoPromesa(valor) {
       resultado: valor * valor })}, 0 | (Math.random() * 1000))})
     }
 
-//Método then() --> Se ejecutará una vez que se cumpla la función inicial y se puede utilizar las veces que se necesite.//Método catch() --> Captura el error resultante del reject.
+//Método then() --> Se ejecutará una vez que se cumpla la función inicial y se puede utilizar las veces que se necesite.
+//Método catch() --> Captura el error resultante del reject.
 
 cuadradoPromesa(0)
 .then((obj) => { //Recibe la parte positiva de la promesa    
@@ -699,3 +700,47 @@ cuadradoPromesa(0)
 //-------------------------------------- Clase 48 - Async/Await --------------------------------------//
 
 //Función asíncrona --> 
+
+
+//-------------------------------------- Clase 49 - Symbols --------------------------------------//
+
+//Nuevos tipos de datos Javascript
+// Symbol --> Tipo de dato primitivo, su valor se mantendrá privado y es único (No se usa operador NEW). Crean referencias únicas y siempre debe ser declarado.
+
+let id = Symbol("id")
+let id2 = Symbol("id2")
+
+console.log(id === id2)
+console.log(id, id2)
+console.log(typeof id, typeof id2)
+
+const NOMBRE = Symbol()
+const SALUDAR = Symbol()
+
+const personita = {
+  [NOMBRE]: "Diana",
+  edad: 23
+}
+
+console.log(personita)
+
+personita.NOMBRE = "Diana Vodopivec"
+console.log(personita) //Console.log del objeto.
+console.log(personita.NOMBRE) //Console.log solo de la propiedad NOMBRE dentro del OBJETO persona.
+console.log(personita[NOMBRE]) //Console.log para acceder al SYMBOL() que es un valor privado.
+
+personita[SALUDAR] = function () {
+  console.log("Hola")
+}
+
+console.log(personita)
+personita[SALUDAR]()
+
+for (let propiedad in personita) {
+  console.log(propiedad)
+  console.log(personita[propiedad])
+}
+
+console.log(Object.getOwnPropertySymbols(personita))//Busca SYMBOLS dentro del objeto.
+
+//-------------------------------------- Clase 50 - Sets --------------------------------------//

@@ -660,5 +660,6 @@ lasPeliculas.forEach((x) => {
     )
     infoPeliculas.infoPelicula()
   })
+
   
   
