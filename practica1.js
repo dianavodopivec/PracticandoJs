@@ -1,11 +1,11 @@
-/*
+
 function sumaNumeros(numero1, numero2) {
     let resultado = numero1 + numero2;
     return resultado;
 }
 
-console.log(sumaNumeros(2, 3))
-console.log(sumaNumeros(5, 5))
+//console.log(sumaNumeros(2, 3))
+//console.log(sumaNumeros(5, 5))
 
 function sumaNumeros2(numb1, numb2, numb3, numb4) {
     let resultadoSuma = numb1 + numb2;
@@ -14,7 +14,7 @@ function sumaNumeros2(numb1, numb2, numb3, numb4) {
 }
 
 let resultadoNumeros2 = sumaNumeros2(2, 3, 5, 5).resultadoResta;
-console.log(resultadoNumeros2)
+//console.log(resultadoNumeros2)
 
 function sumaNumeros2(numb1, numb2, numb3, numb4) {
     let resultadoSuma = numb1 + numb2;
@@ -23,10 +23,10 @@ function sumaNumeros2(numb1, numb2, numb3, numb4) {
   }
   
   let {resultadoSuma, resultadoResta} = sumaNumeros2(2, 3, 5, 5);
-  console.log(resultadoSuma);
-  console.log(resultadoResta);
-*/
-/*
+  //console.log(resultadoSuma);
+  //console.log(resultadoResta);
+
+
 const diana = {
     nombre: "Diana",
     apellido: "Vodopivec",
@@ -35,46 +35,46 @@ const diana = {
     comidasfavoritas: ["Pizza", "Sushi", "Fideos", "Arroz"],
     soltero: true, 
     description: function () {
-        console.log(this.comidasfavoritas);
+        //console.log(this.comidasfavoritas);
     },
 };
 
-diana.description()
+//diana.description()
 
-console.log(diana);
-console.log(diana["nombre"]);
-console.log(diana["apellido"]);
-console.log(diana["edad"]);
-*/
+//console.log(diana);
+//console.log(diana["nombre"]);
+//console.log(diana["apellido"]);
+//console.log(diana["edad"]);
 
-/*
+
 let a = 5 + (5 - 10) * 3;
 let modulo = 5 % 2;
 
-console.log(a);
-console.log(modulo);
-console.log(8 > 9);
-console.log(8 < 9);
-console.log(8 >= 9);
-console.log(8 <= 9);
-console.log(7 == 7);
-console.log("7" == 7);
-console.log(0 == false);
-console.log(0 === false)
+//console.log(a);
+//console.log(modulo);
+//console.log(8 > 9);
+//console.log(8 < 9);
+//console.log(8 >= 9);
+//console.log(8 <= 9);
+//console.log(7 == 7);
+//console.log("7" == 7);
+//console.log(0 == false);
+//console.log(0 === false)
 
-/*let i = 1;
+let i = 1;
 
 i = i + 2;
 i += 3;
 i -= 3;
 i /= 3;
 i *= 3;
-console.log(i);
+//console.log(i);
 i ++;
 i --;
 ++ i;
 -- i;
-console.log(i);*/
+//console.log(i);
+
 /*
 console.log(!true);
 console.log(4 > 5 || 7 > 1);
@@ -85,7 +85,7 @@ console.log(9 === 9) && ("9" === "9");
 
 
 //CLASE 22 - PROTOTIPOS//
-/*
+
 POO (Programación Orientada a Objetos) => 
 Conceptos: 
  Clases: Modelo a seguir.
@@ -701,10 +701,11 @@ cuadradoPromesa(0)
 
 //Función asíncrona --> 
 
+//////////////////////////////////Nuevos tipos de datos Javascript////////////////////////////////////
+
 
 //-------------------------------------- Clase 49 - Symbols --------------------------------------//
 
-//Nuevos tipos de datos Javascript
 // Symbol --> Tipo de dato primitivo, su valor se mantendrá privado y es único (No se usa operador NEW). Crean referencias únicas y siempre debe ser declarado.
 
 let id = Symbol("id")
@@ -744,3 +745,54 @@ for (let propiedad in personita) {
 console.log(Object.getOwnPropertySymbols(personita))//Busca SYMBOLS dentro del objeto.
 
 //-------------------------------------- Clase 50 - Sets --------------------------------------//
+
+//Sets --> Similar a un ARRAY pero de DATOS ÚNICOS e iterable.
+
+const set = new Set([1,2,3,3,4,5,true,false,false,{}, "hola", "HoLa"])
+console.log(set)
+console.log(set.size)
+
+//MÉTODO ADD --> Agrega un elemento (Si agrego un dato primitivo que este repetido, no lo toma).
+//PROPIEDAD .SIZE --> Cuenta la cantidad de elementos que tiene el SET.
+//MÉTODO DELETE --> Borra un elemento específico.
+
+set.delete("HoLa")
+
+//MÉTODO FROM --> Vuelve un objeto en iterable, haciendo que se comporte como un arreglo.
+
+let arr = Array.from(set)
+console.log(arr)
+
+//MÉTODO .HAS --> Comprueba si x valor existe entre los datos, entre comillas pasamos si tiene x cosa que buscamos. 
+
+console.log(set.has("Hola"))
+
+//MÉTODO .CLEAR --> Limpia lo que se encuentra dentro del SET.
+
+//set2.clear()
+
+const set2 = new Set()
+set2.add(1)
+set2.add(2)
+set2.add(3)
+set2.add(true)
+set2.add(false)
+set2.add(true)
+set2.add({})
+
+console.log(set2)
+console.log(set2.size)
+
+console.log("Recorriendo set")
+
+for (item of set) {
+  console.log(item)
+}
+
+console.log("Recorriendo set2")
+
+set2.forEach(item => console.log((item)))
+console.log(set[0])
+
+//-------------------------------------- Clase 51 - Sets --------------------------------------//
+
