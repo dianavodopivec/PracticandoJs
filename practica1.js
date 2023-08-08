@@ -796,9 +796,10 @@ console.log(set[0])
 
 //-------------------------------------- Clase 51 - Maps --------------------------------------//
 
-//Maps --> Objetos que sirven para almacenar un conjunto de valores a manera de objeto.
+//Maps --> (Tipos de datos complejos) Objetos que sirven para almacenar un conjunto de valores a manera de objeto e iterables.
+//Objetos que nos permite tener una llave y valor y sus propiedades de cadena de texto pero también se pueden crear las que no son cadena de texto.
 
-let mapa = new Map()
+const mapa = new Map()
 mapa.set("nombre", "Diana")
 mapa.set("apellido", "Vodopivec")
 mapa.set("edad", 22)
@@ -811,8 +812,13 @@ console.log(mapa.get("nombre"))//Obtener el valor de la propiedad.
 
 mapa.set("nombre", "Diana Elizabeth Vodopivec")
 console.log(mapa.get("nombre"))
-
 mapa.delete("apellido")//Eliminar elemento que deseamos.
+
+/*mapa.set(20, "veinte")
+mapa.set(false, "falso")
+mapa.set({}, {})
+console.log(mapa)*/
+
 console.log(mapa)
 
 //¿COMO RECORRER UN MAPS?
@@ -820,3 +826,18 @@ console.log(mapa)
 for (let [llave, valor] of mapa) {
   console.log(`Llave: ${llave}, Valor: ${valor}`)
 }
+
+const mapa2 = new Map([
+  ["nombre", "Vex"],
+  ["edad", 1],
+  ["animal", "perro"],
+  [null, "nulo"]
+])
+
+console.log(mapa2)
+
+const llavesMapa2 = [...mapa2.llave()]
+const valoresMapa2 = [...mapa2.valor()]
+
+//console.log(llavesMapa2)
+//console.log(valoresMapa2)
