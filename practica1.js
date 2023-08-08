@@ -720,7 +720,7 @@ const SALUDAR = Symbol()
 
 const personita = {
   [NOMBRE]: "Diana",
-  edad: 23
+  edad: 22
 }
 
 console.log(personita)
@@ -794,5 +794,29 @@ console.log("Recorriendo set2")
 set2.forEach(item => console.log((item)))
 console.log(set[0])
 
-//-------------------------------------- Clase 51 - Sets --------------------------------------//
+//-------------------------------------- Clase 51 - Maps --------------------------------------//
 
+//Maps --> Objetos que sirven para almacenar un conjunto de valores a manera de objeto.
+
+let mapa = new Map()
+mapa.set("nombre", "Diana")
+mapa.set("apellido", "Vodopivec")
+mapa.set("edad", 22)
+
+console.log(mapa)
+console.log(mapa.size)//Numero de objetos.
+console.log(mapa.has("correo"))//Devuelve un boleano dependiendo si tiene o no el valor.
+console.log(mapa.has("edad"))
+console.log(mapa.get("nombre"))//Obtener el valor de la propiedad.
+
+mapa.set("nombre", "Diana Elizabeth Vodopivec")
+console.log(mapa.get("nombre"))
+
+mapa.delete("apellido")//Eliminar elemento que deseamos.
+console.log(mapa)
+
+//¿COMO RECORRER UN MAPS?
+
+for (let [llave, valor] of mapa) {
+  console.log(`Llave: ${llave}, Valor: ${valor}`)
+}
