@@ -935,3 +935,213 @@ while(!next.done) {
 }
 
 //-------------------------------------- Clase 54 - Generators --------------------------------------//
+//GENERATORS --> 
+
+/*function* iterable() { //Para que javascript identifique a una función de tipo generador se agrega un "*".
+  yield "hola" //Return que le indica a la función pausar o reanudar una función generadora.
+  console.log("Hola consola")
+  yield "hola 2"
+  console.log("Seguimos con más introducciones de nuestro código")
+  yield "hola 3"
+  yield "hola 4"
+}
+
+let iteradoor = iterable()
+/*console.log(iterador.next())
+console.log(iterador.next())
+console.log(iterador.next())
+console.log(iterador.next())
+console.log(iterador.next())*/
+
+for (let y of iterador) {
+  console.log(y)
+}
+
+/*const arra = [...iterable()]
+console.log(arra)
+
+function cuadrado(valor) {
+setTimeout(() => {
+  console.log({valor, resultado: valor * valor})
+},Math.random()*1000)
+
+return {
+  valor, 
+  resultado: valor * valor
+}
+}*/
+
+function* generador() {
+console.log("Inicia generator")
+/*yield cuadrado(0)
+yield cuadrado(1)
+yield cuadrado(2)
+yield cuadrado(3)
+yield cuadrado(4)
+yield cuadrado(5)
+console.log("Finaliza generator")*/
+}
+
+let gen = generador() 
+
+for (let y of gen) {
+//console.log(y)
+}
+
+//-------------------------------------- Clase 55 - Proxies --------------------------------------//
+//PROXIES --> Mecanismo que permite crear un objeto basado en un objeto literal inicial, generando una copia y permitiendo realizar diversas operaciones (validación de propiedades de tipo de dato) dentro de la copia que se crea, dentro del objeto literal.
+
+const personaa = {
+nombre: "",
+apellido: "",
+edad: 0
+}
+
+const manejador = {
+set(obj,prop,valor) { //Podremos establecer todo tipo de validaciones.
+  if (Object.keys(obj).indexOf(prop) === -1) {
+    return console.error(`La propiedad "${prop}" no existe en el objeto persona.`)
+  } 
+
+  if (
+    (prop === "nombre" || prop === "apellido") && 
+    !(/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/g.test(valor))
+    ){
+      return console.error(`La propiedad "${prop}" sólo acepta letras y espacios en blanco`)
+    }
+  obj[prop] = valor
+}
+}
+
+const dianaa = new Proxy(persona, manejador) 
+dianaa.nombre = "Diana"
+dianaa.apellido = "Vodopivec"
+dianaa.edad = 22
+dianaa.instagram = "@dianaelizabethhv"
+
+console.log(dianaa)
+
+//-------------------------------- Clase 56 - Prop. dinámicas de los Objetos ---------------------//
+
+let aleatorio = Math.round(Math.random() *100 + 5)
+const objUsuarios = {
+[`id_${aleatorio}`]: "Valor aleatorio"
+}
+
+console.log(objUsuarios)
+
+const usuarios = ["Diana", "Matias", "Vex", "Cocho"]
+usuarios.forEach((usuario, index) => 
+objUsuarios[`id_${index}`] = usuario)//Los "[]" nos permitirán crear de manera dinámica los nombres de las propiedades dinámicas.
+
+console.log(objUsuarios)
+
+//-------------------------------------- Clase 57 - This . --------------------------------------//
+//THIS --> Hace referencia al objeto global (window) y es similar al mismo objeto global --> console.log (this === window) - consola (true)
+
+this.nombree = "Contexto Global"
+console.log(this.nombree)
+
+function imprimir () {
+console.log(this.nombree)
+}
+
+imprimir()
+
+const obj = {
+nombree: "Contexto Objeto",
+imprimir: function () {
+  console.log(this.nombree)
+}
+}
+
+obj.imprimir()
+
+const obj2 = {
+nombree: "Contexto Objeto 2",
+imprimir //Hace referencia a la función de la línea 600.
+}
+
+obj2.imprimir()
+
+const obj3 = {
+nombree: "Contexto Objeto 3",
+imprimir: () => { //Arrow function, mantiene un enlace del contexto del que ha sido creado el objeto que aparece.
+  console.log(this.nombree)
+}
+}
+
+obj3.imprimir()   
+
+function Persona(nombree) {
+const that = this //Guardar el contexto de la función constructora para cuando se retorne una función anónima, se pueda recuperar el "this".
+//this.nombre = nombre
+that.nombree = nombree
+
+//return console.log(this.nombre)
+return function() {
+  //console.log(this.nombre)
+  console.log(that.nombre, 77)
+}
+}
+
+let matias = new Persona("Matias")
+
+matias()
+
+//-------------------------------------- Clase 58 - This . --------------------------------------//
+
+//DESAPARECIÓ LA CLASE XD
+
+//-------------------------------------- Clase 59 - JSON --------------------------------------//
+//JSON --> Javascript Object Notation, formato ligero de intercambio de datos.
+//SIEMPRE LLEVA COMILLAS
+
+const json = {
+  cadena: "Diana",
+  numero: 35,
+  booleano: true,
+  arreglo: [],
+  objeto: "{}",
+  nulo: null
+}
+
+//JSON parse() --> Transforma una cadena de texto (string) a su forma "real" de javascript.
+
+console.log(JSON.parse("{}"))
+console.log(JSON.parse("[1,2,3]"))
+console.log(JSON.parse("true"))
+console.log(JSON.parse("false"))
+console.log(JSON.parse("19"))
+//console.log(JSON.parse("Hola a todos, yo soy el León"))//LOS STRINGS SE DEBEN MARCAR DE OTRA FORMA FORMA PARA QUE SE ENTIENDA QUE ES UN STRING.
+console.log(JSON.parse("null"))
+//console.log(JSON.parse("undefined"))//NO VÁLIDO PARA JAVASCRIPT.
+
+console.log(JSON.parse(`{
+  "cadena": "Diana",
+  "numero": "35",
+  "booleano": "true",
+  "arreglo": "[]",
+  "objeto": "{}",
+  "nulo": "null"
+}`))
+
+
+//JSON stringfly() --> Convierte un objeto o un valor válido de javascript a una cadena de texto.
+
+console.log(JSON.stringify({}))
+console.log(JSON.stringify([1,2,3]))
+console.log(JSON.stringify(true))
+console.log(JSON.stringify(false))
+console.log(JSON.stringify(19))
+console.log(JSON.stringify("Hola a todos, yo soy el León"))
+console.log(JSON.stringify(null))
+console.log(JSON.stringify({x: 2, y: 3}))
+
+console.log(JSON.stringify(json))
+
+//-------------------------------------- Clase 60 -  --------------------------------------//
+
+
+
+
