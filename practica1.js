@@ -913,3 +913,25 @@ setTimeout(() => {
 }, 5000)
 
 //-------------------------------------- Clase 53 - Iterables & Iterators --------------------------------------//
+
+//Estructura de datos lineal que hace que sus elementos sean públicos y que se puedan recorrer. (Strings, cadenas de texto, sets, maps, elementos del DOM, etc)
+
+//ITERABLE --> El contenido de su elemento SE PUEDE RECORRER (Funciona para elementos que se pueden recorrer).
+//ITERADOR --> Mecanismo que está recorriendo los elementos.
+
+const iterable = [1, 2, 3, 4, 5]
+//¿Cómo acceder al iterador del iterable?
+const iterador = iterable[Symbol.iterator]()
+
+console.log(iterable)
+console.log(iterador)
+console.log(iterador.next())//Devuelve un objeto
+
+let next = iterador.next()
+
+while(!next.done) {
+  console.log(next.value)
+  next = iterador.next()
+}
+
+//-------------------------------------- Clase 54 - Generators --------------------------------------//
