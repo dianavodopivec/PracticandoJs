@@ -1151,6 +1151,4 @@ let texto = "Hola, soy Diana"
 const hablar = (texto) => speechSynthesis.
 speak(new SpeechSynthesisUtterance(texto))
 
-hablar(texto)
-
-//-------------------------------------- Clase 61 -  --------------------------------------//
+//hablar(texto)
