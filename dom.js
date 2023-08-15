@@ -19,3 +19,9 @@ console.log(document.title)
 console.log(document.links)//Colección de HTML
 console.log(document.images)//Capturar imágenes
 console.log(document.forms)//Acceder a formularios
+console.log(document.styleSheets)//Muestra el estilo CSS}
+console.log(document.scripts)//Scripts enlazados
+console.log(document.getSelection().toString())
+console.log(document.write("Oda"))
+
+//-------------------------------------- Clase 62 -  --------------------------------------//
