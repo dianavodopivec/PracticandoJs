@@ -1140,8 +1140,15 @@ console.log(JSON.stringify({x: 2, y: 3}))
 
 console.log(JSON.stringify(json))
 
-//-------------------------------------- Clase 60 -  --------------------------------------//
+//-------------------------------------- Clase 60 - WEB APIs --------------------------------------//
+//DOM --> Document Object Model (Cómo los navegadores representan el código de HTML y XML)
+//B0M --> Browser Object Model (Refiere a todos los objetos expuestos por el navegador web)
+//CSSOM --> CSS Object Model (Parte pequeña del DOM pero para manipular el CSS. Por ejemplo: animaciones, mediaqueries, etc)
+//WEB APIs --> Eventos, forms, AJAX - Fetch, history, web storage, geolocation, canvas, matchmedia, etc.
 
+let texto = "Hola, soy Diana"
 
+const hablar = (texto) => speechSynthesis.
+speak(new SpeechSynthesisUtterance(texto))
 
-
+//hablar(texto)

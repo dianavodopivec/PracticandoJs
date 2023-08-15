@@ -2,5 +2,11 @@
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
+    background-color: rgb(207, 173, 173);
    }
 
+p {
+    color: rgb(25, 25, 25);
+    font-weight: 500;
+    font-size: 100px;
+  }
