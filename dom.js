@@ -24,4 +24,4 @@ console.log(document.scripts)//Scripts enlazados
 console.log(document.getSelection().toString())
 console.log(document.write("Oda"))
 
-//-------------------------------------- Clase 62 -  --------------------------------------//
+//-------------------------------------- Clase 62 - Nodos, Elementos y Selectores --------------------------------------//
