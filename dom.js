@@ -54,3 +54,4 @@ console.log(document.querySelector(".link-dom").href)
 console.log(document.querySelector(".link-dom").getAttribute("href"))
 
 //-------------------------------------- Clase 64 - Estilos y Variables CSS --------------------------------------//
+
