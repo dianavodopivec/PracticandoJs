@@ -5,6 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Un largo camino ...</title>
+    <style>
+    :root {
+    --pink-color:#8b4d6d;
+    --dark-color:#1c1616;
+    }
+
+    .card {
+        display: inline-block;
+        background-color: var(--dark-color);
+        color: var(--pink-color);
+    }
+
+    .card figcaption {
+        padding: 1rem;
+    }
+
+    .rotate-45 {
+        transform: rotate(45deg);
+    }
+
+    .rotate-135 {
+        transform: rotate(135deg);
+    }
+
+    .opacity-80 {
+        opacity: .8;
+    }
+
+    .saturate {
+        filter: saturate(1);
+    }
+
+    </style>
 </head>
 <p>He llegado lejos :D</p>
 
@@ -45,7 +78,8 @@
 </nav>
 
 <input type="text" name="nombre" placeholder="Nombre">
-<a class="link-dom" href="dom.html" data-description="Document Object Model">DOM</a>
+<a class="link-dom" href="dom.html" style="background-color: rgb(164, 61, 150); color: black;" data-id="1" data-description="Document Object Model">DOM</a>
+
 <section class="cards">
     <figure class="card">
         <figcaption> Voy a empezar a programar, que podría salir mal...</figcaption>
