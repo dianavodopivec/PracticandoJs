@@ -126,3 +126,5 @@ console.log($card.classList.contains("rotate-20"))//Devuelve un booleano según 
 $card.classList.remove("rotate-20")//Nos permite remover la clase que querramos.
 $card.classList.toggle("rotate-20")//Si el elemento posee la clase, este se la quita. Pero si no tiene la clase, la agrega.
 //$card.classList.replace("rotate-20")//Reemplazar una clase por otra así como también podes agregar varias clases y las separas con ",".
+
+ //-------------------------------------- Clase 66 - Texto y HTML --------------------------------------//
