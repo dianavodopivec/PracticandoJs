@@ -111,7 +111,7 @@ let varPinkColor = getComputedStyle($html).getPropertyValue("--pink-color"), //A
 
  $body.style.setProperty("background-color", varPinkColor)
 
- //-------------------------------------- Clase 65 - Clases CSS --------------------------------------//
+//-------------------------------------- Clase 65 - Clases CSS --------------------------------------//
 
 //¿Cómo accedemos a las "clases"?
 
@@ -127,4 +127,39 @@ $card.classList.remove("rotate-20")//Nos permite remover la clase que querramos.
 $card.classList.toggle("rotate-20")//Si el elemento posee la clase, este se la quita. Pero si no tiene la clase, la agrega.
 //$card.classList.replace("rotate-20")//Reemplazar una clase por otra así como también podes agregar varias clases y las separas con ",".
 
- //-------------------------------------- Clase 66 - Texto y HTML --------------------------------------//
+//-------------------------------------- Clase 66 - Texto y HTML --------------------------------------//
+
+ //Capturar en una variable la referencia de un elemento.
+
+ const $QueEsDOM = document.getElementById("Qué es")
+
+ let textoVariable = `
+  <p> DOM es una API para documentos HTML y XML <p/>
+ `
+//Cómo modificar el contenido y reemplazarlo por un texto, propiedades:
+
+$QueEsDOM.innerText = textoVariable //Agregar contenido textual a un elemento 
+$QueEsDOM.textContent = textoVariable //Agrega contenido textual (Solo insertar texto)
+$QueEsDOM.innerHTML = textoVariable//Contenido se renderice como código HTML (Sólo contenido HTML)
+$QueEsDOM.outerHTML = textoVariable//Reemplaza un elemento del DOM por el contenido que tengamos
+
+//-------------------------------------- Clase 67 - Traversing: Recorriendo el DOM --------------------------------------//
+
+//Propiedades que nos da la API del DOM para poder recorrer diferentes elementos. (Etiquetas HTML)
+
+const $cards = document.querySelector(".cards")
+
+console.log($cards)
+console.log($cards.children)//Hace referencia a "sus hijos" (cada figure)
+console.log($cards.children[2])//Para acceder a una en específico
+console.log($cards.parentElement)//Retorna el elemento "padre"
+console.log($cards.firstChild)//Accede al primer "hijo" 
+console.log($cards.firstElementChild)//Detecta el primer elemento HTML
+console.log($cards.lastElementChild)//Detecta el último elemento HTML
+console.log($cards.previousElementSibling)//Detecta al anteúltimo elemento HTML
+console.log($cards.nextElementSibling)//Detecta a la siguiente elemento HTML
+console.log($cards.closest("div"))//Método que busca el padre más cercano del tipo de selector que querramos
+console.log($cards.closest("body"))
+console.log($cards.children[3].closest("section"))
+
+//-------------------------------------- Clase 68 - Crear Elementos y Fragmentos --------------------------------------//
