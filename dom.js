@@ -163,3 +163,5 @@ console.log($cards.closest("body"))
 console.log($cards.children[3].closest("section"))
 
 //-------------------------------------- Clase 68 - Crear Elementos y Fragmentos --------------------------------------//
+
+//
