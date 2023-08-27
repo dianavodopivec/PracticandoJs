@@ -147,9 +147,9 @@ $QueEsDOM.outerHTML = textoVariable//Reemplaza un elemento del DOM por el conten
 
 //Propiedades que nos da la API del DOM para poder recorrer diferentes elementos. (Etiquetas HTML)
 
-const $cards = document.querySelector(".cards")
+//const $cards = document.querySelector(".cards")
 
-console.log($cards)
+/*console.log($cards)
 console.log($cards.children)//Hace referencia a "sus hijos" (cada figure)
 console.log($cards.children[2])//Para acceder a una en específico
 console.log($cards.parentElement)//Retorna el elemento "padre"
@@ -160,8 +160,36 @@ console.log($cards.previousElementSibling)//Detecta al anteúltimo elemento HTML
 console.log($cards.nextElementSibling)//Detecta a la siguiente elemento HTML
 console.log($cards.closest("div"))//Método que busca el padre más cercano del tipo de selector que querramos
 console.log($cards.closest("body"))
-console.log($cards.children[3].closest("section"))
+console.log($cards.children[3].closest("section"))*/
 
 //-------------------------------------- Clase 68 - Crear Elementos y Fragmentos --------------------------------------//
 
-//
+const $figure = document.createElement("figure"), //Creará un elemento
+  $img = document.createElement("img"), //Configurar source y alt, etc
+  $figcaption = document.createElement("figcaption"), //Modificar el nodo de texto, creando otro elemento de tipo texto
+  $figcaptionText = document.createTextNode(""), //Creará un nodo de texto
+  $cards = document.querySelector(".cards"),
+  $figure2 = document.createElement("figure")
+
+
+//Primer tarjeta dinámica
+$img.setAttribute("src", "https://i.kym-cdn.com/entries/icons/facebook/000/046/026/armpG9d_700b.jpg")
+$img.setAttribute("alt", "Claro que no ...")
+$figure.classList.add("card")
+
+$figure.appendChild($figcaptionText)
+$figure.appendChild($img)
+$figure.appendChild($figcaption)  
+$cards.appendChild($figure)
+
+//Segunda tarjeta dinámica
+$figure2.innerHTML = `
+<img src="https://pbs.twimg.com/media/EgS8Ft9WkAoV8lL.jpg" alt="Triste">
+<figcaption>Esto me está deprimiendo</figcaption>
+`
+$figure2.classList.add("card")
+$cards.appendChild($figure2)
+
+
+
+//-------------------------------------- Clase 69 - DOM: Templates HTML --------------------------------------//
