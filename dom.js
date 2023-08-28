@@ -191,5 +191,28 @@ $figure2.classList.add("card")
 $cards.appendChild($figure2)
 
 
+//Lista dinámica 
+const dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"],
+$ul = document.createElement("ul")
+
+document.write("<h3>Días de la semana</h3>")
+
+document.body.appendChild($ul)
+
+dias.forEach(el => {
+  const $li = document.createElement("li")
+  $li.textContent = el
+  $ul.appendChild($li)
+})
+
+//Lista con inner.HTML
+
+const continentes = ["África", "América", "Asia", "Europa", "Oceanía"],
+ $ul2 = document.createElement("ul")
+
+ document.write("<h3>Continentes</h3>")
+ document.body.appendChild($ul2)
+$ul.innerHTML = ""
+continentes.forEach(el => {$ul2.innerHTML += `<li>${el}<li/>`})//Inicialización del contenido innerHTML
 
 //-------------------------------------- Clase 69 - DOM: Templates HTML --------------------------------------//
