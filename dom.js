@@ -168,7 +168,7 @@ const $figure = document.createElement("figure"), //Creará un elemento
   $img = document.createElement("img"), //Configurar source y alt, etc
   $figcaption = document.createElement("figcaption"), //Modificar el nodo de texto, creando otro elemento de tipo texto
   $figcaptionText = document.createTextNode(""), //Creará un nodo de texto
-  $cards = document.querySelector(".cards"),
+  //$cards = document.querySelector(".cards"),
   $figure2 = document.createElement("figure")
 
 
@@ -180,7 +180,7 @@ $figure.classList.add("card")
 $figure.appendChild($figcaptionText)
 $figure.appendChild($img)
 $figure.appendChild($figcaption)  
-$cards.appendChild($figure)
+//$cards.appendChild($figure)
 
 //Segunda tarjeta dinámica
 $figure2.innerHTML = `
@@ -188,7 +188,7 @@ $figure2.innerHTML = `
 <figcaption>Esto me está deprimiendo</figcaption>
 `
 $figure2.classList.add("card")
-$cards.appendChild($figure2)
+//$cards.appendChild($figure2)
 
 
 //Lista dinámica 
@@ -216,3 +216,59 @@ $ul.innerHTML = ""
 continentes.forEach(el => {$ul2.innerHTML += `<li>${el}<li/>`})//Inicialización del contenido innerHTML
 
 //-------------------------------------- Clase 69 - DOM: Templates HTML --------------------------------------//
+
+//Etiqueta que NO se visualiza en la pestaña de elements.
+
+const $cards = document.querySelector(".cards"),
+$template = document.getElementById("template-card").content,
+$fragment = document.createDocumentFragment(),
+cardcContent = [
+  {
+    title: "Foto1",
+    img: "https://img.freepik.com/foto-gratis/atractiva-mujer-sonriente-feliz-senalando-dedo-derecha_176420-17747.jpg"
+  },
+  {
+    title: "Foto2",
+    img: "https://thumbs.dreamstime.com/b/una-programadora-frustrada-trabaja-en-computadora-retroiluminaci%C3%B3n-azul-y-rojo-mujer-trabajo-la-oficina-209232062.jpg"
+  },
+  {
+    title: "Foto3",
+    img: "https://media.istockphoto.com/id/1353629776/es/foto/primer-plano-de-una-mujer-que-tiene-un-colapso-mental.jpg?s=612x612&w=0&k=20&c=y3RtQZX1A9A--yAAtgcbZGuLfmm3r2jLBvuMzWsZWVw="
+  },
+  {
+    title: "Foto4",
+    img: "https://img.freepik.com/foto-gratis/foto-perfil-mujer-volviendo-camara-senalando-dedo-sonrisa-satisfaccion_176420-17751.jpg"
+  },
+  {
+    title: "Foto5",
+    img: "https://i0.wp.com/www.homosensual.com/wp-content/uploads/2022/08/joder-esto-si-es-cine-meme.jpg?resize=600%2C368&ssl=1"
+  },
+]
+
+//Navegar 
+cardcContent.forEach(el => {
+  $template.querySelector("img").setAttribute("src", el.img)
+  $template.querySelector("img").setAttribute("alt", el.title)
+  $template.querySelector("figcaption").textContent = el.title
+
+  let $clone = document.importNode($template, true) //Para clonar todo el nodo de un documento, el "true" refiere a que copiaremos TODA la estructura interna.
+  $fragment.appendChild($clone) //Al fragment le agregamos el $clone 
+})
+
+//Cuando termine el FOREACH, al elemento card le agregamos el $fragment.
+
+$cards.appendChild($fragment)
+
+//-------------------------------------- Clase 70 - Modificando Elementos (Old Style)  --------------------------------------//
+
+
+
+//-------------------------------------- Clase 71 -  --------------------------------------//
+
+//-------------------------------------- Clase 72 -  --------------------------------------//
+
+//-------------------------------------- Clase 73 -  --------------------------------------//
+
+//-------------------------------------- Clase 74 -  --------------------------------------//
+
+//-------------------------------------- Clase 75 -  --------------------------------------//
