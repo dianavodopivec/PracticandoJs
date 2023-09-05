@@ -219,6 +219,7 @@ continentes.forEach(el => {$ul2.innerHTML += `<li>${el}<li/>`})//Inicialización
 
 //Etiqueta que NO se visualiza en la pestaña de elements.
 
+/*
 const $cards = document.querySelector(".cards"),
 $template = document.getElementById("template-card").content,
 $fragment = document.createDocumentFragment(),
@@ -258,12 +259,35 @@ cardcContent.forEach(el => {
 //Cuando termine el FOREACH, al elemento card le agregamos el $fragment.
 
 $cards.appendChild($fragment)
+*/
 
 //-------------------------------------- Clase 70 - Modificando Elementos (Old Style)  --------------------------------------//
+ 
+const $cards = document.querySelector(".cards"),
+ $newCard = document.createElement("figure")
 
+$newCard.innerHTML = `
+<img src= "https://pbs.twimg.com/media/EgS8Ft9WkAoV8lL.jpg" alt="Triste">
+<figcaption>Triste</figcaption>
+`
+$newCard.classList.add("card")
+$cloneCards = $cards.cloneNode(true)//Booleano TRUE para clonar todo el contenido.
 
+//MÉTODOS 
 
-//-------------------------------------- Clase 71 -  --------------------------------------//
+//.REPLACE CHILD// 
+//$cards.replaceChild($newCard, $cards.children[2])//Reemplazar un elemento --> Primero va el elemento al que vamos a reemplazar y luego el elemento que vamos a usar para ese reemplazo.
+
+//.INSERT BEFORE//
+//$card.insertBefore($newCard, $cards.firstElementChild) //Toma como referencia el nodo hijo e inserta el nuevo nodo antes de ese --> Primero va el nuevo nodo y el nodo de referencia.
+
+//.REMOVE//
+//$cards.removeChild($cards.lastElementChild) //Método para eliminar --> Adentro va el nodo que queremos eliminar.
+
+//.CLONE NODE//
+//document.body.appendChild($cloneCards)
+
+//-------------------------------------- Clase 71 - Modificando elementos (Cool Style) --------------------------------------//
 
 //-------------------------------------- Clase 72 -  --------------------------------------//
 
