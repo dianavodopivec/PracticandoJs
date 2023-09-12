@@ -261,9 +261,9 @@ cardcContent.forEach(el => {
 $cards.appendChild($fragment)
 */
 
-//-------------------------------------- Clase 70 - Modificando Elementos (Old Style)  --------------------------------------//
+//-------------------------------------- Clase 70 - Modificando Elementos (Old Style) I --------------------------------------//
  
-const $cards = document.querySelector(".cards"),
+/*const $cards = document.querySelector(".cards"),
  $newCard = document.createElement("figure")
 
 $newCard.innerHTML = `
@@ -271,7 +271,7 @@ $newCard.innerHTML = `
 <figcaption>Triste</figcaption>
 `
 $newCard.classList.add("card")
-$cloneCards = $cards.cloneNode(true)//Booleano TRUE para clonar todo el contenido.
+$cloneCards = $cards.cloneNode(true)//Booleano TRUE para clonar todo el contenido.*/
 
 //MÉTODOS 
 
@@ -287,12 +287,37 @@ $cloneCards = $cards.cloneNode(true)//Booleano TRUE para clonar todo el contenid
 //.CLONE NODE//
 //document.body.appendChild($cloneCards)
 
-//-------------------------------------- Clase 71 - Modificando elementos (Cool Style) --------------------------------------//
+//-------------------------------------- Clase 71 - Modificando elementos (Cool Style) II --------------------------------------//
 
-//-------------------------------------- Clase 72 -  --------------------------------------//
+//MÉTODO INSERT ADJACENT --> "Inserta de manera adyacente"
 
-//-------------------------------------- Clase 73 -  --------------------------------------//
+/*.insertAdjacentElement(position, el)//Agrega un elemento 
+.insertAdjacentHTML(position, html)//Agrega contenido HTML
+.insertAdjacentText(position, text)//Agrega un textcount que recibe 2 parámetros  (posición y elemento)*/
 
-//-------------------------------------- Clase 74 -  --------------------------------------//
+//POSICIONES
 
-//-------------------------------------- Clase 75 -  --------------------------------------//
+//beforebegin(hermano anterior) -> p.ej: Si tengo un párrafo, lo pondría antes del párrafo que tomo como referencia.
+//afterbegin(primer hijo) -> p.ej: El primer elemento hijo del nodo que tomo como referencia.
+//beforeend(último hijo) 
+//afterend(hermano siguiente) 
+
+const $cards = document.querySelector(".cards"),
+ $newCard = document.createElement("figure")
+
+let $contentCard = `
+<img src= "https://pbs.twimg.com/media/EgS8Ft9WkAoV8lL.jpg" alt="Triste">
+<figcaption></figcaption>
+`
+$newCard.classList.add("card")
+
+//Por ejemplo...
+$cards.insertAdjacentElement("beforebegin", $newCard)
+
+//-------------------------------------- Clase 72 - Manejadores de Eventos --------------------------------------//
+
+//-------------------------------------- Clase 73 - Eventos con Parámetros y Remover Eventos --------------------------------------//
+
+//-------------------------------------- Clase 74 - Flujo de Eventos (Burbuja y captura) --------------------------------------//
+
+//-------------------------------------- Clase 75 - StopPropagation & preventDefault --------------------------------------//
