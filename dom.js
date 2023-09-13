@@ -316,6 +316,23 @@ $cards.insertAdjacentElement("beforebegin", $newCard)
 
 //-------------------------------------- Clase 72 - Manejadores de Eventos --------------------------------------//
 
+//ONCLICK -> Permite ejecutar una función cuando se le da click a cierto elemento.
+
+function holaMundo() {
+  alert("Hola mundo")
+  console.log(event)
+}
+
+//<button onclick="alert()">Evento con atributo HTML</button>//
+const $eventosemantico = document.getElementById("evento-semantico")
+
+//Cómo ejecutar la función como manejador semántico (una vez definido, solo podrá ejecutar UNA función) también se pueden realizar con arrow function o funciones anónimas.
+$eventosemantico.onclick = holaMundo()
+$eventosemantico.onclick = function (e) {
+  alert("Hola, ahora manejo eventos semánticos jeje")
+  console.log(e)//Este parámetro representa el evento
+}
+
 //-------------------------------------- Clase 73 - Eventos con Parámetros y Remover Eventos --------------------------------------//
 
 //-------------------------------------- Clase 74 - Flujo de Eventos (Burbuja y captura) --------------------------------------//
