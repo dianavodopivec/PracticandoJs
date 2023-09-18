@@ -315,6 +315,7 @@ $newCard.classList.add("card")
 $cards.insertAdjacentElement("beforebegin", $newCard)
 
 //-------------------------------------- Clase 72 - Manejadores de Eventos --------------------------------------//
+// EVENTO SEMÁNTICO
 
 //ONCLICK -> Permite ejecutar una función cuando se le da click a cierto elemento.
 
@@ -324,7 +325,8 @@ function holaMundo() {
 }
 
 //<button onclick="alert()">Evento con atributo HTML</button>//
-const $eventosemantico = document.getElementById("evento-semantico")
+const $eventosemantico = document.getElementById("evento-semantico"),
+$eventomultiple = document.getElementById("evento-multiple")
 
 //Cómo ejecutar la función como manejador semántico (una vez definido, solo podrá ejecutar UNA función) también se pueden realizar con arrow function o funciones anónimas.
 $eventosemantico.onclick = holaMundo()
@@ -333,7 +335,32 @@ $eventosemantico.onclick = function (e) {
   console.log(e)//Este parámetro representa el evento
 }
 
+//EVENTO MÚLTIPLE
+
+/*$eventomultiple.addEventListener("click", holaMundo)//Recibe varios parámetros 
+$eventomultiple.addEventListener("click", (e) => {
+  alert("Hola, ahora manejo eventos múltiples jeje")
+  console.log(e)
+})*/
+
 //-------------------------------------- Clase 73 - Eventos con Parámetros y Remover Eventos --------------------------------------//
+
+//Toda función manejadora de eventos NO puede recibir otro parámetro que sea el evento en SI.
+
+
+//Si necesito que una función se ejecute en un evento pero necesito pasarle parámetros, simplemente se envuelve en una arrow function o función anónima y ya podría pasar parámetros.
+function saludar (nombre = "Desconocide") {
+  alert(`Hola ${nombre}`)
+}
+
+$eventomultiple.addEventListener("click", () => { 
+  saludar()
+  saludar("Dibella")
+})
+
+//Eliminar eventos de un elemento
+
+
 
 //-------------------------------------- Clase 74 - Flujo de Eventos (Burbuja y captura) --------------------------------------//
 
