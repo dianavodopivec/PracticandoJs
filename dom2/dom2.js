@@ -64,4 +64,44 @@ document.addEventListener("click", (e) => {
 //-------------------------------------- Clase 77 - BOM: Propiedades y Eventos --------------------------------------//
 
 //BOM: Serie de métodos u objetos que "cuelgan" directamente de Window.
- 
+
+window.addEventListener("resize", (e) => {
+console.clear()
+console.log("---Evento Resize---")
+//Propiedad - window.innerWidht -> Hace referencia al tamaño del ancho del viewport de nuestra ventana.
+console.log(window.innerWidth)
+console.log(window.outerWidth)
+//Propiedad - window.innerHeight -> Hace referencia a la altura del viewport de nuestra ventana.
+console.log(window.innerHeight)
+console.log(window.outerHeight)
+console.log(e)
+})
+
+window.addEventListener("scroll", (e) => {
+console.clear()
+console.log("---Evento Scroll---")
+//Propiedad - window.scrollX & window.scrollY -> Hace referencia a cada una de las barras de desplazamiento. (Siempre son números positivos expresados en pixeles)
+console.log(window.scrollX)
+console.log(window.scrollY)
+console.log(e)
+})
+
+window.addEventListener("load", (e) => {
+console.log("---Evento Load---")
+//Propiedad - window.screenX & window.screenY -> Hace referencia a la distancia horizontal en pixeles.
+console.log(window.screenX)
+console.log(window.screenY)
+console.log(e)
+})
+
+document.addEventListener("DOMContentLoaded", (e) => {
+console.log("---Evento DOMContentLoaded---")
+//Propiedad - window.screenX & window.screenY -> Hace referencia a la distancia horizontal en pixeles.
+console.log(window.screenX)
+console.log(window.screenY)
+console.log(e)
+})
+
+//-------------------------------------- Clase 78 - BOM: Métodos --------------------------------------//
+
+//-------------------------------------- Clase 79 -  --------------------------------------//
