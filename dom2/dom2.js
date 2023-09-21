@@ -65,7 +65,7 @@ document.addEventListener("click", (e) => {
 
 //BOM: Serie de métodos u objetos que "cuelgan" directamente de Window.
 
-window.addEventListener("resize", (e) => {
+/*window.addEventListener("resize", (e) => {
 console.clear()
 console.log("---Evento Resize---")
 //Propiedad - window.innerWidht -> Hace referencia al tamaño del ancho del viewport de nuestra ventana.
@@ -74,8 +74,9 @@ console.log(window.outerWidth)
 //Propiedad - window.innerHeight -> Hace referencia a la altura del viewport de nuestra ventana.
 console.log(window.innerHeight)
 console.log(window.outerHeight)
-console.log(e)
+//console.log(e)
 })
+
 
 window.addEventListener("scroll", (e) => {
 console.clear()
@@ -83,7 +84,7 @@ console.log("---Evento Scroll---")
 //Propiedad - window.scrollX & window.scrollY -> Hace referencia a cada una de las barras de desplazamiento. (Siempre son números positivos expresados en pixeles)
 console.log(window.scrollX)
 console.log(window.scrollY)
-console.log(e)
+//console.log(e)
 })
 
 window.addEventListener("load", (e) => {
@@ -91,7 +92,7 @@ console.log("---Evento Load---")
 //Propiedad - window.screenX & window.screenY -> Hace referencia a la distancia horizontal en pixeles.
 console.log(window.screenX)
 console.log(window.screenY)
-console.log(e)
+//console.log(e)
 })
 
 document.addEventListener("DOMContentLoaded", (e) => {
@@ -99,10 +100,10 @@ console.log("---Evento DOMContentLoaded---")
 //Propiedad - window.screenX & window.screenY -> Hace referencia a la distancia horizontal en pixeles.
 console.log(window.screenX)
 console.log(window.screenY)
-console.log(e)
+//console.log(e)
 })
 
-console.clear()
+console.clear()*/
 
 //-------------------------------------- Clase 78 - BOM: Métodos --------------------------------------//
 
@@ -125,3 +126,37 @@ $botonImprimir.addEventListener("click", (e) =>{
 })
 
 //-------------------------------------- Clase 79 - BOM: Objetos: URL, Historial y Navegador --------------------------------------//
+
+//OBJETO URL 
+console.log("---Objeto URL (location)---")
+console.log(location)
+console.log(location.origin)
+console.log(location.protocol)
+console.log(location.host)
+console.log(location.hostname)
+console.log(location.port)
+console.log(location.href)
+console.log(location.hash)
+console.log(location.search)
+console.log(location.pathname)
+
+//OBJETO HISTORIAL
+console.log("---Objeto HISTORIAL (history)---")
+console.log(history)
+console.log(history.length)//Guarda la longitud.
+console.log(history.back)//Para navegar entre páginas. P ej: entre (2)
+console.log(history.forward)//Cuántas páginas quieres ir hacia adelante. P ej: entre (1)
+console.log(history.go)//Nos dirige hacia donde queremos ir. P ej: entre (-3)
+
+//OBJETO NAVEGADOR
+console.log("---Objeto NAVEGADOR (navigator)---")
+console.log(navigator)
+console.log(navigator.connection)
+console.log(navigator.geolocation)
+console.log(navigator.mediaDevices)
+console.log(navigator.mimeTypes)//No existe más.
+console.log(navigator.onLine)
+console.log(navigator.serviceWorker)
+console.log(navigator.storage)
+console.log(navigator.usb)
+console.log(navigator.userAgent)
