@@ -62,3 +62,6 @@ document.addEventListener("click", (e) => {
 })
 
 //-------------------------------------- Clase 77 - BOM: Propiedades y Eventos --------------------------------------//
+
+//BOM: Serie de métodos u objetos que "cuelgan" directamente de Window.
+ 
