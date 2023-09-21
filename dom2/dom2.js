@@ -3,7 +3,7 @@
 //UNA VEZ QUE UN EVENTO SE ORIGINA, TIENE UNA PROPAGACIÓN A LO LARGO DEL ÁRBOL DEL DOM, ES POR ESO MISMO QUE ESA PROPAGACIÓN SE DA DEL ELEMENTO MÁS INTERNO AL MÁS EXTERNO (FASE DE BURBUJA)
 //DOS MANERAS DE PROPAGAR UN EVENTO
 
-const $divsEventos = document.querySelectorAll(".eventos-flujo div"),
+/*const $divsEventos = document.querySelectorAll(".eventos-flujo div"),
 $linkEventos = document.querySelector(".eventos-flujo a")
 
 console.log($divsEventos)
@@ -24,13 +24,13 @@ $divsEventos.forEach((div) => {
       capture: false,//Activará el comportamiento interno al más externo
       capture: true,//Activará el comportamiento externo al más interno
       once: true//Para que el evento se ejecute una sola vez
-    })*/
+    })
 })
 
 $linkEventos.addEventListener("click", (e) => {
     alert("Hola, soy Dibella SilverHand y vamos a quemar este país 👅👅")
     //e.preventDefault()
-})
+})*/
 
 //-------------------------------------- Clase 75 - StopPropagation & preventDefault --------------------------------------//
 
@@ -39,3 +39,26 @@ $linkEventos.addEventListener("click", (e) => {
 
 //-------------------------------------- Clase 76 - Delegación de Eventos --------------------------------------//
 
+//(REUTILIZANDO CÓDIGO ANTERIOR)
+
+const $divsEventos = document.querySelectorAll(".eventos-flujo div"),
+$linkEventos = document.querySelector(".eventos-flujo a")
+
+function flujoEventos(e){
+    console.log(`Holi te saluda ${this.className}, el click lo originó ${e.target.className}`)
+}
+
+document.addEventListener("click", (e) => {
+    console.log("click en", e.target)
+    if(e.target.matches(".eventos-flujo div")) {
+        flujoEventos(e)
+    }
+
+//El método MATCHES busca un selector válido
+    if (e.target.matches(".eventos-flujo a")) {
+       alert("Hola, soy Dibella SilverHand y vamos a quemar este país 👅👅")
+       e.preventDefault() 
+    }
+})
+
+//-------------------------------------- Clase 77 - BOM: Propiedades y Eventos --------------------------------------//
