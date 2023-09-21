@@ -102,6 +102,26 @@ console.log(window.screenY)
 console.log(e)
 })
 
+console.clear()
+
 //-------------------------------------- Clase 78 - BOM: Métodos --------------------------------------//
 
-//-------------------------------------- Clase 79 -  --------------------------------------//
+const $botonAbrir = document.getElementById("abrir-ventana"),
+$botonCerrar = document.getElementById("cerrar-ventana"),
+$botonImprimir = document.getElementById("imprimir-ventana")
+
+$botonAbrir.addEventListener("click", (e) =>{
+    //Método para abrir una ventana
+    window.open("https://www.youtube.com/watch?v=gt943-HQzGc&ab_channel=ErnestGamingway")
+})
+
+$botonCerrar.addEventListener("click", (e) =>{
+    //Método para cerrar la ventana
+    window.close()
+})
+$botonImprimir.addEventListener("click", (e) =>{
+    //Método para imprimir
+    window.print()
+})
+
+//-------------------------------------- Clase 79 - BOM: Objetos: URL, Historial y Navegador --------------------------------------//
