@@ -319,21 +319,23 @@ $cards.insertAdjacentElement("beforebegin", $newCard)
 
 //ONCLICK -> Permite ejecutar una función cuando se le da click a cierto elemento.
 
-function holaMundo() {
-  alert("Hola mundo")
+/*function holaMundo() {
+  //alert("Hola mundo")
   console.log(event)
 }
 
 //<button onclick="alert()">Evento con atributo HTML</button>//
 const $eventosemantico = document.getElementById("evento-semantico"),
-$eventomultiple = document.getElementById("evento-multiple")
+$eventomultiple = document.getElementById("evento-multiple"),
+$eventoRemover = document.getElementById("evento-remover")*/
+
 
 //Cómo ejecutar la función como manejador semántico (una vez definido, solo podrá ejecutar UNA función) también se pueden realizar con arrow function o funciones anónimas.
-$eventosemantico.onclick = holaMundo()
+/*$eventosemantico.onclick = holaMundo()
 $eventosemantico.onclick = function (e) {
   alert("Hola, ahora manejo eventos semánticos jeje")
   console.log(e)//Este parámetro representa el evento
-}
+}*/
 
 //EVENTO MÚLTIPLE
 
@@ -349,19 +351,40 @@ $eventomultiple.addEventListener("click", (e) => {
 
 
 //Si necesito que una función se ejecute en un evento pero necesito pasarle parámetros, simplemente se envuelve en una arrow function o función anónima y ya podría pasar parámetros.
-function saludar (nombre = "Desconocide") {
+/*function saludar (nombre = "Desconocide") {
   alert(`Hola ${nombre}`)
 }
 
 $eventomultiple.addEventListener("click", () => { 
   saludar()
   saludar("Dibella")
-})
+})*/
 
 //Eliminar eventos de un elemento
 
-
+/*$eventoRemover.addEventListener("dblclick", (e) => {
+  alert(`Removiendo el evento de tipo ${e.type}`)
+  console.log(e)
+  $eventRemover.removeEventListener("dblclick", removerDobleClick)//ES NECESARIO QUE LA FUNCIÓN ESTE PREVIAMENTE GUARDADA PARA PODER REMOVERLA (NO PUEDE SER FUNCIÓN ARROW O ANÓNIMA)
+  $eventoRemover.disabled = true //Aplicar la propiedad disabled al true para que desaparezca el botón
+})*/
 
 //-------------------------------------- Clase 74 - Flujo de Eventos (Burbuja y captura) --------------------------------------//
+
+//UNA VEZ QUE UN EVENTO SE ORIGINA, TIENE UNA PROPAGACIÓN A LO LARGO DEL ÁRBOL DEL DOM, ES POR ESO MISMO QUE ESA PROPAGACIÓN SE DA DEL ELEMENTO MÁS INTERNO AL MÁS EXTERNO (FASE DE BURBUJA)
+//DOS MANERAS DE PROPAGAR UN EVENTO
+
+const $divsEventos = document.querySelectorAll(".eventos-flujo div")
+console.log($divsEventos)
+
+
+/*function flujoEventos(e){
+  console.log(`Holi`)
+}
+
+
+$divsEventos.forEach((div) => {
+  div.addEventListener("click", flujoEventos)
+})*/
 
 //-------------------------------------- Clase 75 - StopPropagation & preventDefault --------------------------------------//
