@@ -7,9 +7,21 @@ const $divsEventos = document.querySelectorAll(".eventos-flujo div")
 console.log($divsEventos)
 
 function flujoEventos(e){
-    console.log(`Holi`)
+    console.log(`Holi te saluda ${this.className}, el click lo originó ${e.target.className}`)//Target para saber que div originó el evento.
 }
 
 $divsEventos.forEach((div) => {
-    div.addEventListener("click", flujoEventos)
+    //Fase de burbuja (interno al más externo)
+    div.addEventListener("click", flujoEventos, false)
+    //Fase de captura (externo al más interno)
+    div.addEventListener("click", flujoEventos, true)
+    //También se puede pasar un objeto - CAPTURE (hace referencia a si es fase de burbuja o captura)
+    div.addEventListener("click", flujoEventos, {
+      capture: false,//Activará el comportamiento interno al más externo
+      capture: true,//Activará el comportamiento externo al más interno
+      once: true//Para que el evento se ejecute una sola vez
+    })
 })
+
+//-------------------------------------- Clase 75 - StopPropagation & preventDefault --------------------------------------//
+
